@@ -1,29 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public interface IPickupable
+public interface IPickupableWeapon
 {
-    abstract void OnPickup();
-    abstract void OnDrop();
+    abstract void OnWeaponPickup();
+    abstract void OnWeaponDrop();
 }
 
-public interface IDamagable { };
+public interface IDamagable 
+{
+    abstract void TakeDamage();
+};
 
 namespace Weaponry
 {
     public interface IShoot 
     {
-        abstract void Shoot();
+        abstract void Shoot(InputAction.CallbackContext obj);
     };
 
     public interface IReload 
     {
-        abstract void Reload();
+        abstract void Reload(InputAction.CallbackContext obj);
     };
 
     public interface IAltFire 
     {
-        abstract void AltFire();
+        abstract void AltFire(InputAction.CallbackContext obj);
     };
 }

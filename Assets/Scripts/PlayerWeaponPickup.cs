@@ -24,11 +24,11 @@ public class PlayerWeaponPickup : MonoBehaviour
 
             GameObject objHit = hit.transform.gameObject;
 
-            if (objHit.GetComponent<IPickupable>() == null || _curPickup != null) return;
+            if (objHit.GetComponent<IPickupableWeapon>() == null || _curPickup != null) return;
 
             _curPickup = objHit;
 
-            _curPickup.GetComponent<IPickupable>().OnPickup();
+            _curPickup.GetComponent<IPickupableWeapon>().OnWeaponPickup();
 
             _curPickup.transform.parent = _weaponHoldPoint;
             _curPickup.transform.rotation = _weaponHoldPoint.rotation;
@@ -42,7 +42,7 @@ public class PlayerWeaponPickup : MonoBehaviour
 
         _curPickup.transform.parent = null;
 
-        _curPickup.GetComponent<IPickupable>().OnDrop();
+        _curPickup.GetComponent<IPickupableWeapon>().OnWeaponDrop();
 
         _curPickup = null;
     }

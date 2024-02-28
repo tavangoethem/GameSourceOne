@@ -1,6 +1,8 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(MovementController))]
 public class InputController : MonoBehaviour
 {
     [SerializeField] private MainInput mainInput;
@@ -15,6 +17,9 @@ public class InputController : MonoBehaviour
     {
         mainInput.Enable();
         mainInput.Player.Enable();
+        mainInput.Player.Crouch.started += StartCrouch;
+        mainInput.Player.Crouch.canceled += EndCrouch;
+        mainInput.Player.Jump.performed += JumpAction;
     }
     private void Update()
     {
@@ -27,6 +32,20 @@ public class InputController : MonoBehaviour
         movementController?.UpdateMovement(delta);
     }
 
+    private void StartCrouch(InputAction.CallbackContext context)
+    {
+        movementController?.StartCrouchControl();
+    }    
+    private void EndCrouch(InputAction.CallbackContext context)
+    {
+        movementController?.AttemptExitCrouch();
+    }
+
+    private void JumpAction(InputAction.CallbackContext context)
+    {
+        movementController?.jumpNow();
+    }
+
     private void UpdateRotation(Vector2 delta)
     {
         cameraLook?.UpdateRotation(delta);
@@ -36,5 +55,9 @@ public class InputController : MonoBehaviour
     {
         mainInput.Disable();
         mainInput.Player.Disable();
+        mainInput.Player.Crouch.Disable();
+        mainInput.Player.Crouch.started -= StartCrouch;
+        mainInput.Player.Crouch.canceled -= EndCrouch;
+        mainInput.Player.Jump.performed -= JumpAction;
     }
 }

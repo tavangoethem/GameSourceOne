@@ -47,7 +47,7 @@ public class Rifle : MonoBehaviour, IPickupableWeapon, IShoot, IReload
         if (GetComponent<Rigidbody>() == null) return;
 
         GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().AddForce(transform.forward * 3f, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(transform.forward * 7f, ForceMode.Impulse);
 
         _mainInput.Disable();
         _mainInput.Player.Disable();

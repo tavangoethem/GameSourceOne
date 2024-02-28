@@ -1,25 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 using Weaponry;
 
-public class Rifle : WeaponBase, IShoot, IReload
+public class Rifle : MonoBehaviour, IPickupableWeapon, IShoot, IReload
 {
     [SerializeField] private int _maxAmmo;
 
     private int _curAmmo;
 
+    [SerializeField] private Transform _firePoint;
+
+    private MainInput _mainInput;
+
+    private void Awake()
+    {
+        _mainInput = new MainInput();
+
+    }
+
     public void Shoot(InputAction.CallbackContext obj)
     {
-        Transform mainCam = Camera.main.transform;
-
-        RaycastHit hit;
-        Ray cameraRay = new Ray(mainCam.position, mainCam.transform.forward);
-        if(Physics.Raycast(cameraRay, out hit))
-        {
-            if (hit.transform.gameObject != null)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(1);
-
-        }
+        print("bang");
     }
 
     public void Reload(InputAction.CallbackContext obj)
@@ -27,17 +31,24 @@ public class Rifle : WeaponBase, IShoot, IReload
         _curAmmo = _maxAmmo;
     }
 
-    public override void OnWeaponPickup()
+    public void OnWeaponPickup()
     {
-        base.OnWeaponPickup();
+        if (GetComponent<Rigidbody>() == null) return;
+
+        GetComponent<Rigidbody>().isKinematic = true;
+
         _mainInput.Enable();
         _mainInput.Player.Enable();
         _mainInput.Player.Shoot.started += Shoot;
     }
 
-    public override void OnWeaponDrop()
+    public void OnWeaponDrop()
     {
-        base.OnWeaponDrop();
+        if (GetComponent<Rigidbody>() == null) return;
+
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().AddForce(transform.forward * 7f, ForceMode.Impulse);
+
         _mainInput.Disable();
         _mainInput.Player.Disable();
         _mainInput.Player.Shoot.started -= Shoot;

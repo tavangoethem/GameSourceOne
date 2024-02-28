@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 1364455107}
   - component: {fileID: 1364455106}
   - component: {fileID: 1364455109}
+  - component: {fileID: 1364455110}
   m_Layer: 0
   m_Name: PlayerStandIn
   m_TagString: Untagged
@@ -1034,6 +1035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 10
+  _jumpStrength: 10
+  _verticalVelocity: 0
   crouchingIsBlocked: 0
 --- !u!143 &1364455107
 CharacterController:
@@ -1081,6 +1084,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1364455110
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364455103}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1624701364
 GameObject:
   m_ObjectHideFlags: 0

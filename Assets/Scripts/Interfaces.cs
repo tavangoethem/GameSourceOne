@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-public interface IPickupableWeapon
-{
-    abstract void OnWeaponPickup();
-    abstract void OnWeaponDrop();
-}
-
 public interface IDamagable 
 {
-    abstract void TakeDamage();
+    abstract void TakeDamage(int damageToTake);
+
+    abstract void Die();
 };
 
 namespace Weaponry

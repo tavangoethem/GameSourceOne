@@ -652,7 +652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.6, y: 52.86}
+  m_AnchoredPosition: {x: 11.6, y: -105}
   m_SizeDelta: {x: 530.5, y: 367.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830703997
@@ -679,7 +679,7 @@ MonoBehaviour:
     Shipping Containers by Calvin Weibel: https://assetstore.unity.com/packages/p/free-shipping-containers-18315\n\nIndustrial
     Models by Made for Games: https://assetstore.unity.com/packages/p/industrial-models-171071\n\nMilitary
     Helicopter by Duane's Mind: https://assetstore.unity.com/packages/3d/vehicles/air/military-helicopter-3922\n\nSci-Fi
-    Construction Kit (Modular) by Sickhead Games:\nhttps://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction-kit-modular-159280\n"
+    Construction Kit (Modular) by Sickhead Games:\nhttps://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction-kit-modular-159280"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -148.97198, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

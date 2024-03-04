@@ -241,7 +241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -266.9, y: -131.1}
+  m_AnchoredPosition: {x: -350, y: -180.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329404473
@@ -679,7 +679,11 @@ MonoBehaviour:
     Shipping Containers by Calvin Weibel: https://assetstore.unity.com/packages/p/free-shipping-containers-18315\n\nIndustrial
     Models by Made for Games: https://assetstore.unity.com/packages/p/industrial-models-171071\n\nMilitary
     Helicopter by Duane's Mind: https://assetstore.unity.com/packages/3d/vehicles/air/military-helicopter-3922\n\nSci-Fi
-    Construction Kit (Modular) by Sickhead Games:\nhttps://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction-kit-modular-159280"
+    Construction Kit (Modular) by Sickhead Games:\nhttps://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction-kit-modular-159280\n\nApartment
+    Kit by Brick Project Studio - https://assetstore.unity.com/packages/3d/environments/apartment-kit-124055\r\n\nBoats
+    - PolyPack by Alstra Infinite - https://assetstore.unity.com/packages/3d/vehicles/sea/boats-polypack-189866\r\n\nModern
+    Table with Chairs by Aquvelous - https://assetstore.unity.com/packages/3d/props/interior/modern-table-with-chairs-83834\r\n\nPrototyping
+    Pack (Free) by DigitalKonstrukt - https://assetstore.unity.com/packages/3d/prototyping-pack-free-94277"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -706,13 +710,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.3
-  m_fontSizeBase: 19.3
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

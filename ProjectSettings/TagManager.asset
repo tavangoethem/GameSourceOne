@@ -5,11 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Checkpoint
+  - Transition
+  - Death Plane
+  - ActivateAbility
+  - DeactivateAbility
+  - DoorInteractionTag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DontRenderOnCamera
   - Water
   - UI
   - 

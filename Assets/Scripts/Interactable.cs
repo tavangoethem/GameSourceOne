@@ -12,7 +12,9 @@ public class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        displayText.text = "";
+        //displayText.text = "";
+        displayText = GameObject.FindWithTag("DoorInteractionTag").GetComponent<TMP_Text>();
+        displayText.text = null;
     }
 
     public void DisplayInteractable()

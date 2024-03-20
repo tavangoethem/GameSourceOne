@@ -15,6 +15,8 @@ public class MovementController : MonoBehaviour
     [SerializeField]private bool crouchingIsBlocked = false;
 
     Vector3 velocity = new Vector3();
+
+    public bool canCrouch = false;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -43,28 +45,33 @@ public class MovementController : MonoBehaviour
 
     public void StartCrouchControl()
     {
-        _capsuleCollider.height = .5f;
-        _capsuleCollider.center = new Vector3(0,-0.5f,0);
-        _characterController.height = 0.5f;
-        _characterController.radius = .25f;
-        _movementSpeed = _movementSpeed / 2f;
+        if (canCrouch == true)
+        {
+            _capsuleCollider.height = .5f;
+            _capsuleCollider.center = new Vector3(0, -0.5f, 0);
+            _characterController.height = 0.5f;
+            _characterController.radius = .25f;
+            _movementSpeed = _movementSpeed / 2f;
+        }
     }
     public void AttemptExitCrouch()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
+        if (canCrouch == true || _capsuleCollider.height == .5f)
         {
-            _capsuleCollider.height = 1f;
-            _capsuleCollider.center = new Vector3(0, 0, 0);
-            _characterController.height = 2f;
-            _characterController.radius = .5f;
-            _movementSpeed = _movementSpeed * 2f;
-        }
-        else
-        {
-            StartCoroutine(CheckIfUncrouch());
-        }
-            
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
+            {
+                _capsuleCollider.height = 1f;
+                _capsuleCollider.center = new Vector3(0, 0, 0);
+                _characterController.height = 2f;
+                _characterController.radius = .5f;
+                _movementSpeed = _movementSpeed * 2f;
+            }
+            else
+            {
+                StartCoroutine(CheckIfUncrouch());
+            }
+        }            
     }
 
     private IEnumerator CheckIfUncrouch()

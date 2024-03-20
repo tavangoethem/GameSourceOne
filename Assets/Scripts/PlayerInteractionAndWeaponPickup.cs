@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 {
+    [Header("Interactable Stuff")]
     [SerializeField] private Transform _weaponHoldPoint;
-
     [SerializeField] private GameObject _curWeapon;
-
-    //[SerializeField] private TMPro.TMP_Text highlightText;
-
     [SerializeField] private GameObject _highlightedInteractable;
-
+    [SerializeField] private float _maxInteractableDistance = 3;
     private void Update()
     {
         LookForInteracable();
@@ -30,10 +27,10 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
     {
         Camera camera = Camera.main;
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, _maxInteractableDistance))
         {
             GameObject hitObj = hit.transform.gameObject;
-            if(_highlightedInteractable != null)
+            if(_highlightedInteractable != null || hitObj == null)
                 UnHighlight(_highlightedInteractable);
 
             if (hitObj.GetComponent<IInteractable>() == null)
@@ -72,7 +69,7 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
     {
         Camera camera = Camera.main;
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit,_maxInteractableDistance))
         {
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<IInteractable>() == null)

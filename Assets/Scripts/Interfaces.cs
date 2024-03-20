@@ -11,6 +11,7 @@ public interface IDamagable
 
 public interface IInteractable
 {
+    //abstract void OnHighlight(GameObject objAttemptingInteraction);
     abstract void Interact(GameObject objAttemptingInteraction);
 }
 

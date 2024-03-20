@@ -36,4 +36,8 @@ public abstract class WeaponBase : MonoBehaviour, IInteractable
             objAttemptingInteraction.GetComponent<PlayerInteractionAndWeaponPickup>().WeaponPickup(gameObject);
         }
     }
+
+    public void OnHighlight(GameObject objAttemptingInteraction)
+    {        
+    }
 }

@@ -9,12 +9,28 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 
     private void Update()
     {
+        LookForInteracable();
+
         if(Input.GetKeyDown(KeyCode.E))
         {
             AttemptInteraction();
         }
         if (Input.GetKeyDown(KeyCode.Q))
            AttemptDrop();
+    }
+
+    private void LookForInteracable()
+    {
+        Camera camera = Camera.main;
+        RaycastHit hit;
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
+        {
+            GameObject hitObj = hit.transform.gameObject;
+            if (hitObj.GetComponent<IInteractable>() == null)
+                return;
+
+            
+        }
     }
 
     private void AttemptInteraction()

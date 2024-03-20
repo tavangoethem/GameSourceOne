@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class DoorScript : MonoBehaviour, IInteractable
 {
     public Animator doorAnimator;
     private bool _isOpen = false;
@@ -22,5 +22,10 @@ public class DoorScript : MonoBehaviour
             doorAnimator.ResetTrigger("Open");
             _isOpen = false;
         }
+    }
+
+    public void Interact(GameObject objAttemptingInteraction)
+    {
+        DoorInteraction();
     }
 }

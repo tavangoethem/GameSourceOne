@@ -1,9 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementController))]
 public class EnableCrouch : MonoBehaviour
 {
-    public MovementController controller;
+    private MovementController controller;
 
     public void Start()
     {
@@ -15,6 +16,7 @@ public class EnableCrouch : MonoBehaviour
         if (other.tag == "ActivateAbility")
         {
             controller.canCrouch = true;
+            Destroy(other.gameObject);
         }
         else if (other.tag == "DeactivateAbility")
         {

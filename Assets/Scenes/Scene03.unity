@@ -3815,7 +3815,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh135524
+  m_Name: pb_Mesh37698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5503,6 +5503,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2826758478848579678, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: _sensitivty
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -65
+      objectReference: {fileID: 0}
     - target: {fileID: 7350379251353805329, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -23998,6 +24018,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1582998017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: e5e3230248f99f746a40e9791d9c7810, type: 3}
+  m_PrefabInstance: {fileID: 456802548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1582998021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582998017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8441415, y: 2.7636337, z: 4.241844}
+  m_Center: {x: 0, y: 1.3708322, z: -0.722065}
 --- !u!1 &1589424520
 GameObject:
   m_ObjectHideFlags: 0

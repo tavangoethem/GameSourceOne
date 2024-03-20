@@ -9,6 +9,11 @@ public interface IDamagable
     abstract void Die();
 };
 
+public interface IInteractable
+{
+    abstract void Interact(GameObject objAttemptingInteraction);
+}
+
 namespace Weaponry
 {
     public interface IShoot 

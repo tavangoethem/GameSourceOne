@@ -7,7 +7,7 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 
     [SerializeField] private GameObject _curWeapon;
 
-    [SerializeField] private TMPro.TMP_Text highlightText;
+    //[SerializeField] private TMPro.TMP_Text highlightText;
 
     [SerializeField] private GameObject _highlightedInteractable;
 
@@ -20,9 +20,12 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
             AttemptInteraction();
         }
         if (Input.GetKeyDown(KeyCode.Q))
-           AttemptDrop();
+           AttemptWeaponDrop();
     }
 
+    /// <summary>
+    /// checks for interactables and highlights the ones its looking at
+    /// </summary>
     private void LookForInteracable()
     {
         Camera camera = Camera.main;
@@ -62,6 +65,9 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Attempts interactions with the interactabel currently looked at
+    /// </summary>
     private void AttemptInteraction()
     {
         Camera camera = Camera.main;
@@ -76,6 +82,9 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// handles weapons position and rotation
+    /// </summary>
     public void WeaponPickup(GameObject weaponToPickup)
     {
         if (_curWeapon != null)
@@ -89,7 +98,10 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 
     }
 
-    private void AttemptDrop()
+    /// <summary>
+    /// handles weapon drops
+    /// </summary>
+    private void AttemptWeaponDrop()
     {
         if (_curWeapon == null) return;
 

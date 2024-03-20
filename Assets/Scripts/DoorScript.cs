@@ -9,7 +9,6 @@ public class DoorScript : MonoBehaviour, IInteractable
 
     public void DoorInteraction()
     {
-
         if (!_isOpen)
         {
             doorAnimator.SetTrigger("Open");

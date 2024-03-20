@@ -7,6 +7,10 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 
     [SerializeField] private GameObject _curWeapon;
 
+    [SerializeField] private TMPro.TMP_Text highlightText;
+
+    [SerializeField] private GameObject _highlightedInteractable;
+
     private void Update()
     {
         LookForInteracable();
@@ -26,10 +30,35 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
         {
             GameObject hitObj = hit.transform.gameObject;
-            if (hitObj.GetComponent<IInteractable>() == null)
-                return;
+            if(_highlightedInteractable != null)
+                UnHighlight(_highlightedInteractable);
 
-            
+            if (hitObj.GetComponent<IInteractable>() == null)
+            {
+                _highlightedInteractable = null;
+            }
+            else
+            {
+                _highlightedInteractable = hitObj;
+
+                HighlightObject(_highlightedInteractable);
+            }
+        }
+    }
+
+    private void UnHighlight(GameObject objectToHighlight)
+    {
+        if (objectToHighlight.GetComponentInChildren<Renderer>() != null)
+        {
+            objectToHighlight.GetComponentInChildren<Renderer>().material.DisableKeyword("_EMISSION");
+        }
+    }
+
+    private void HighlightObject(GameObject objectToHighlight)
+    {
+        if (objectToHighlight.GetComponentInChildren<Renderer>() != null)
+        {
+            objectToHighlight.GetComponentInChildren<Renderer>().material.EnableKeyword("_EMISSION");
         }
     }
 
@@ -49,6 +78,9 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 
     public void WeaponPickup(GameObject weaponToPickup)
     {
+        if (_curWeapon != null)
+            return;
+
         _curWeapon = weaponToPickup;
 
         _curWeapon.transform.parent = _weaponHoldPoint;

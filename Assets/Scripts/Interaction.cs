@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.ProBuilder.Shapes;
@@ -15,7 +13,7 @@ public class Interaction : MonoBehaviour
         {
             if (_selection.GetComponent<Interactable>() != null)
             {
-                _selection.GetComponent<Interactable>().HideInteractable();
+                _selection.GetComponent<Interactable>()?.HideInteractable();
             }
             _selection = null;
         }
@@ -30,8 +28,7 @@ public class Interaction : MonoBehaviour
         {
             var selection = hit.transform;
             
-            Debug.Log(selection.gameObject.name);
-
+            
             if (selection.GetComponent<Interactable>() != null)
             {
                 selection.GetComponent<Interactable>().DisplayInteractable();

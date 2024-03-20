@@ -9,6 +9,16 @@ public interface IDamagable
     abstract void Die();
 };
 
+public interface IHealable
+{
+    abstract void HealDamage(int valueToHeal);
+}
+
+public interface IInteractable
+{
+    abstract void Interact(GameObject objAttemptingInteraction);
+}
+
 namespace Weaponry
 {
     public interface IShoot 

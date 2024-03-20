@@ -4,9 +4,11 @@ using Weaponry;
 
 public class Rifle : WeaponBase, IShoot, IReload
 {
+    [SerializeField] private int _damage = 1;
+
     [SerializeField] private int _maxAmmo;
 
-    private int _curAmmo;
+    [SerializeField] private int _curAmmo;
 
     public void Shoot(InputAction.CallbackContext obj)
     {
@@ -17,8 +19,7 @@ public class Rifle : WeaponBase, IShoot, IReload
         if(Physics.Raycast(cameraRay, out hit))
         {
             if (hit.transform.gameObject != null)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(1);
-
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage);
         }
     }
 

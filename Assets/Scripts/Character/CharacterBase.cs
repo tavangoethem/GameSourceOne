@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CharacterBase : MonoBehaviour, IDamagable
+public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 {
     [SerializeField] protected Health health;
     public virtual void Awake()
@@ -21,6 +21,11 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable
     {
 
     }
+
+    public void HealDamage(int valueToHeal)
+    {
+        health.HealDamage(valueToHeal);
+    }
 }
 
 [Serializable]
@@ -34,6 +39,13 @@ public class Health
     public void Init()
     {
         curHealth = maxHealth;
+    }
+
+    public void HealDamage(int valueToHeal)
+    {
+        curHealth += valueToHeal;
+        if(curHealth > maxHealth)
+            curHealth = maxHealth;
     }
 
     public void TakeDamage(int damageToTake)

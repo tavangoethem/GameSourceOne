@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/ListOfAssets.cs.meta
-guid: e9f734e6b84722f43b3c6e91171ae62e
-========
-guid: d8a56497822cec946a8b53c1bf5006fe
->>>>>>>> main:Assets/Scripts/PowerUpRotation.cs.meta
+guid: fed0dbfb154beaa47b27d1719b6b5836
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

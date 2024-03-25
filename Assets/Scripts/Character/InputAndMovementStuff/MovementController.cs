@@ -5,7 +5,8 @@ using UnityEngine.InputSystem.HID;
 [RequireComponent(typeof(CharacterController))]
 public class MovementController : MonoBehaviour
 {
-    [SerializeField, Min(1)] private float _movementSpeed;
+    [SerializeField, Min(1)] private float _baseMovementSpeed = 10;
+    [SerializeField, Min(1)] private float _slowMovementSpeed = 5;
     [SerializeField, Min(1)] private float _jumpStrength;
 
     private CharacterController _characterController;
@@ -25,7 +26,11 @@ public class MovementController : MonoBehaviour
 
     public void UpdateMovement(Vector2 movementDelta)
     {
-        movementDelta = movementDelta * _movementSpeed;
+        if (_capsuleCollider.height == 1f)
+            movementDelta = movementDelta * _baseMovementSpeed;
+        else
+            movementDelta = movementDelta * _slowMovementSpeed;
+
         velocity = new Vector3(movementDelta.x, _verticalVelocity, movementDelta.y);
         velocity = transform.rotation * velocity;
         _characterController?.Move(velocity * Time.deltaTime);
@@ -45,18 +50,17 @@ public class MovementController : MonoBehaviour
 
     public void StartCrouchControl()
     {
-        if (canCrouch == true)
+        if (canCrouch == true && _capsuleCollider.height == 1f)
         {
             _capsuleCollider.height = .5f;
             _capsuleCollider.center = new Vector3(0, -0.5f, 0);
             _characterController.height = 0.5f;
             _characterController.radius = .25f;
-            _movementSpeed = _movementSpeed / 2f;
         }
     }
     public void AttemptExitCrouch()
     {
-        if (canCrouch == true || _capsuleCollider.height == .5f)
+        if (canCrouch == true && _capsuleCollider.height == .5f)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
@@ -65,7 +69,6 @@ public class MovementController : MonoBehaviour
                 _capsuleCollider.center = new Vector3(0, 0, 0);
                 _characterController.height = 2f;
                 _characterController.radius = .5f;
-                _movementSpeed = _movementSpeed * 2f;
             }
             else
             {

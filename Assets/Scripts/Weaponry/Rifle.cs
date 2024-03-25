@@ -39,7 +39,7 @@ public class Rifle : WeaponBase, IShoot, IReload
             Ray cameraRay = new Ray(mainCam.position, mainCam.transform.forward);
             if (Physics.Raycast(cameraRay, out hit))
             {
-                if (hit.transform.gameObject != null)
+                if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
                     hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage);
             }
             yield return new WaitForSeconds(_speed);

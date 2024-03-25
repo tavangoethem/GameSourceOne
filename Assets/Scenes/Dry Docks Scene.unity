@@ -54980,6 +54980,14 @@ PrefabInstance:
       propertyPath: _movementSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675035, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: _baseMovementSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826758480088675035, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
+      propertyPath: _slowMovementSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
 --- !u!1001 &1499214888

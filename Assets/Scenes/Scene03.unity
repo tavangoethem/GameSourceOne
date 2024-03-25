@@ -6863,7 +6863,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2826758478848579678, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: _sensitivty
-      value: 4.6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2826758480088674982, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: m_TagString
@@ -6875,15 +6875,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.5
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2826758480088675033, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.25
+      value: -64.25
       objectReference: {fileID: 0}
     - target: {fileID: 2826758480088675035, guid: 97df1f57f375ea148bba7a5237a78bc2, type: 3}
       propertyPath: canCrouch
@@ -13258,7 +13258,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh108930
+  m_Name: pb_Mesh128446
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15368,7 +15368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c622a59feed75aa4d97902d64ed9c5b6, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c622a59feed75aa4d97902d64ed9c5b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15826,14 +15826,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909056886}
-  m_LocalRotation: {x: -0.39200592, y: 0.35704863, z: 0.7975462, w: 0.28769368}
+  m_LocalRotation: {x: -0.43384716, y: 0.30484253, z: 0.82742566, w: 0.18497136}
   m_LocalPosition: {x: 61.75, y: 0, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -52.663, y: -43.807, z: 162.838}
+  m_LocalEulerAnglesHint: {x: -41.68, y: -54.124, z: 176.808}
 --- !u!1 &917496464
 GameObject:
   m_ObjectHideFlags: 0
@@ -33918,6 +33918,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3012564773171803874, guid: fe132559eb4f89a4ebf2dd1a219dae4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012564773171803874, guid: fe132559eb4f89a4ebf2dd1a219dae4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012564773171803874, guid: fe132559eb4f89a4ebf2dd1a219dae4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 6385878711499027680, guid: fe132559eb4f89a4ebf2dd1a219dae4d, type: 3}
       propertyPath: m_Name
       value: Door Container

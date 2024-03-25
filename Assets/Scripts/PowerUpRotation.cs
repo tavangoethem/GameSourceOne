@@ -8,6 +8,6 @@ public class PowerUpRotation : MonoBehaviour
        // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, Time.deltaTime * rotationSpeed, 0, Space.World);
+        transform.Rotate(0f, Time.deltaTime * rotationSpeed, 0f, Space.World);
     }
 }

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<<< HEAD:Assets/ListOfAssets.cs.meta
-guid: e9f734e6b84722f43b3c6e91171ae62e
+<<<<<<< Updated upstream
+guid: f8e10eb518b09e648b888ff93b2167c3
+=======
+guid: 36b251276c563024f881903b6da7c2df
+>>>>>>> Stashed changes
 ========
 guid: d8a56497822cec946a8b53c1bf5006fe
 >>>>>>>> main:Assets/Scripts/PowerUpRotation.cs.meta

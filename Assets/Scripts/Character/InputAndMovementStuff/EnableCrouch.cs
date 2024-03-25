@@ -18,7 +18,7 @@ public class EnableCrouch : MonoBehaviour
         {
             controller.canCrouch = true;
             Instantiate(_particleSystem, transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+            other.GetComponent<IInteractable>()?.Interact(this.gameObject);
         }
         else if (other.tag == "DeactivateAbility")
         {

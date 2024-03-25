@@ -196,4 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e0a3092418f984ba986f1205d7f0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _keysRequired: 0
+  _materials:
+  - {fileID: 2100000, guid: 1c401d11184b8b2499054f3904ed1195, type: 2}
+  - {fileID: 2100000, guid: bc2cccd09ee043f4fba4a9770f9c8487, type: 2}
+  - {fileID: 2100000, guid: 534cc6ade6195344e8195fdbd6189dfa, type: 2}
+  - {fileID: 2100000, guid: c5e055b8cf30ed846a2196a52dd3198f, type: 2}
   doorAnimator: {fileID: 3012564773171803875}

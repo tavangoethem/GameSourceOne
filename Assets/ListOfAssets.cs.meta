@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ListOfAssets.cs.meta
+guid: 963492eb4cbb9bd4ba586880528f64c5
+========
+guid: d8a56497822cec946a8b53c1bf5006fe
+>>>>>>>> main:Assets/Scripts/PowerUpRotation.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

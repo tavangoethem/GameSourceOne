@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnableCrouch : MonoBehaviour
 {
     private MovementController controller;
+    [SerializeField] private GameObject _particleSystem;
 
     public void Start()
     {
@@ -16,6 +17,7 @@ public class EnableCrouch : MonoBehaviour
         if (other.tag == "ActivateAbility")
         {
             controller.canCrouch = true;
+            Instantiate(_particleSystem, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
         }
         else if (other.tag == "DeactivateAbility")

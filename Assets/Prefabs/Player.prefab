@@ -266,7 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dab6a10907cfa4286db557a314c985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 10
+  _baseMovementSpeed: 10
+  _slowMovementSpeed: 5
   _jumpStrength: 7.5
   _verticalVelocity: 0
   crouchingIsBlocked: 0
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e47d69b8144a445b484e4ac3ec9926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 0}
 --- !u!114 &2826758480088675025
 MonoBehaviour:
   m_ObjectHideFlags: 0

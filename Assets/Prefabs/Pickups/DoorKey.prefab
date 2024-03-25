@@ -118,6 +118,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 534cc6ade6195344e8195fdbd6189dfa, type: 2}
   - {fileID: 2100000, guid: c5e055b8cf30ed846a2196a52dd3198f, type: 2}
   Key: 1
+  _pickupClip: {fileID: 8300000, guid: c30ca25929dc83242b0d63ec0fd226c0, type: 3}
 --- !u!1 &4194761055178595819
 GameObject:
   m_ObjectHideFlags: 0

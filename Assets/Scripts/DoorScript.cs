@@ -10,6 +10,8 @@ public class DoorScript : MonoBehaviour, IInteractable
     public Animator doorAnimator;
     private bool _isOpen = false;
 
+    [SerializeField] private AudioClip _openClip;
+
     private void OnEnable()
     {
         Renderer temp = GetComponent<Renderer>();
@@ -57,6 +59,7 @@ public class DoorScript : MonoBehaviour, IInteractable
             if (objAttemptingInteraction.GetComponent<CharacterInventory>().CurKeys.HasFlag(_keysRequired) == true)
             {
                 DoorInteraction();
+                AudioManager.instance?.PlaySFX(_openClip);
             }
             else
                 //locked noise or stuff 

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteAlways]
 public class KeyPickup : MonoBehaviour, IInteractable
@@ -10,6 +12,8 @@ public class KeyPickup : MonoBehaviour, IInteractable
     [SerializeField] public Material[] _materials;
 
     [SerializeField] public Keys Key;
+
+    [SerializeField] private AudioClip _pickupClip;
     public void OnEnable()
     {
         Renderer temp = Tag.GetComponent<Renderer>();
@@ -37,6 +41,7 @@ public class KeyPickup : MonoBehaviour, IInteractable
     public void Interact(GameObject objAttemptingInteraction)
     {
         objAttemptingInteraction.GetComponent<CharacterInventory>()?.UpdateKeys(Key);
+        AudioManager.instance?.PlaySFX(_pickupClip);
         Destroy(gameObject);
     }
 }

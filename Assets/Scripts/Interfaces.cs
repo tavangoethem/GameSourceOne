@@ -16,6 +16,7 @@ public interface IHealable
 
 public interface IInteractable
 {
+    //public string OnInteractText { get; }
     abstract void Interact(GameObject objAttemptingInteraction);
 }
 

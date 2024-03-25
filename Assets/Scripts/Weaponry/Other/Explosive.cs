@@ -10,6 +10,8 @@ public class Explosive : MonoBehaviour, IDamagable
 
     private bool _hasExploded = false;
 
+    public OnDamageEvent OnDamageEvent;
+
     public void Die()
     {
     }
@@ -17,6 +19,8 @@ public class Explosive : MonoBehaviour, IDamagable
     public void Explode()
     {
         if (_hasExploded) return;
+
+        OnDamageEvent?.Invoke();
 
         _hasExploded = true;
 

@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 {
     [SerializeField] protected Health health;
+    public Health Heath { get { return health; } }
     public virtual void Awake()
     {
         health.Init();

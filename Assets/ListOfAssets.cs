@@ -15,6 +15,8 @@ public class ListOfAssets : MonoBehaviour
     Industrial Models by Made for Games - https://assetstore.unity.com/packages/p/industrial-models-171071
     Low Detail Forklift by VIS Games - https://assetstore.unity.com/packages/3d/vehicles/land/low-detail-forklift-752
     Military Helicopter by Duane's Mind - https://assetstore.unity.com/packages/3d/vehicles/air/military-helicopter-3922
-
+    Safety Barriers by PancakeMan96 - https://www.turbosquid.com/3d-models/free-safety-barriers-3d-model/623456
+    Air Vents by Little Bunny - https://www.turbosquid.com/3d-models/air-vents-3d-model-1495396
+    Explosive Barrel Free low-poly by HuNtEr_3DdD - https://www.turbosquid.com/3d-models/explosive-barrel-low-poly-3d-model-1590597
      */
 }

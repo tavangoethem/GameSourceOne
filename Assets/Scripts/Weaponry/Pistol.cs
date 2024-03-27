@@ -21,7 +21,7 @@ public class Pistol : WeaponBase, IShoot, IReload
         if (Physics.Raycast(cameraRay, out hit))
         {
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage);
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public interface IDamagable 
 {
-    abstract void TakeDamage(int damageToTake);
+    abstract void TakeDamage(int damageToTake, Vector3 damagePosition);
 
     abstract void Die();
 };

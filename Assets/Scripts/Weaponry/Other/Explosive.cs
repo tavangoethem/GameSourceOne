@@ -10,8 +10,6 @@ public class Explosive : MonoBehaviour, IDamagable
 
     private bool _hasExploded = false;
 
-    public OnDamageEvent OnDamageEvent;
-
     public void Die()
     {
     }
@@ -20,8 +18,6 @@ public class Explosive : MonoBehaviour, IDamagable
     {
         if (_hasExploded) return;
 
-        OnDamageEvent?.Invoke();
-
         _hasExploded = true;
 
         Collider[] colls = Physics.OverlapSphere(transform.position, _radius);
@@ -29,11 +25,11 @@ public class Explosive : MonoBehaviour, IDamagable
         foreach (Collider coll in colls)
         {
             if(coll != gameObject.GetComponent<Collider>())
-                coll.GetComponent<IDamagable>()?.TakeDamage(_damage);
+                coll.GetComponent<IDamagable>()?.TakeDamage(_damage, coll.ClosestPoint(transform.position));
         }
         Destroy(gameObject);
     }
-    public void TakeDamage(int damageToTake)
+    public void TakeDamage(int damageToTake, Vector3 damagePosition)
     {
         Explode();
     }

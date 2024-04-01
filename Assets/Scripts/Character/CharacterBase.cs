@@ -13,9 +13,9 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
         health.OnDeath += Die;
     }
 
-    public virtual void TakeDamage(int damageToTake)
+    public virtual void TakeDamage(int damageToTake, Vector3 damagePosition)
     {
-        health.TakeDamage(damageToTake);
+        health.TakeDamage(damageToTake, damagePosition);
     }
 
     public virtual void Die()
@@ -35,6 +35,7 @@ public class Health
     public int maxHealth = 10;
     public int curHealth;
 
+    public event Action<Vector3> OnDamage;
     public event Action OnDeath;
 
     public void Init()
@@ -49,9 +50,10 @@ public class Health
             curHealth = maxHealth;
     }
 
-    public void TakeDamage(int damageToTake)
+    public void TakeDamage(int damageToTake, Vector3 position)
     {
         curHealth -= damageToTake;
+        OnDamage?.Invoke(position);
         if(curHealth <= 0)
         {
             curHealth = 0;

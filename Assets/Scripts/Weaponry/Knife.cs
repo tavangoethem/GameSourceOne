@@ -20,7 +20,7 @@ public class Knife : WeaponBase, IShoot
         if (Physics.Raycast(cameraRay, out hit, AttackDistance))
         {
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage);
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
         }
     }
 

@@ -16,7 +16,7 @@ public class DOTVolume : MonoBehaviour
             {
                 if (collider != null)
                 {
-                    collider.GetComponent<IDamagable>()?.TakeDamage(2);
+                    collider.GetComponent<IDamagable>()?.TakeDamage(2, collider.ClosestPoint(transform.position));
                 }
             }
         }

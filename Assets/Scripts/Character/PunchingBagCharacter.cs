@@ -6,12 +6,9 @@ using UnityEngine.Events;
 
 public class PunchingBagCharacter : CharacterBase
 {
-    public OnDamageEvent OnDamageEvent;
-
-    public override void TakeDamage(int damageToTake)
+    public override void TakeDamage(int damageToTake, Vector3 damagePosition)
     {
-        base.TakeDamage(damageToTake);
-        OnDamageEvent?.Invoke();
+        base.TakeDamage(damageToTake, damagePosition);
     }
 
     public override void Die()
@@ -19,6 +16,3 @@ public class PunchingBagCharacter : CharacterBase
         
     }
 }
-
-[Serializable]
-public class OnDamageEvent : UnityEvent { }

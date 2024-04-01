@@ -14,14 +14,14 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] private PlayerCharacter _pChar;
     private void Start()
     {
-        Debug.Log(_pChar.Heath.curHealth);
+        //Debug.Log(_pChar.Heath.curHealth);
     }
     private void Update()
     {
         barLength = (float)_pChar.Heath.curHealth / _pChar.Heath.maxHealth;
         countdownBar.transform.localScale = new Vector3(barLength, 1, 1);
 
-        Debug.Log(barLength);
+        //Debug.Log(barLength);
         if (barLength > 0)
         {
 

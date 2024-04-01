@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
 [RequireComponent(typeof(CharacterController))]
 public class MovementController : MonoBehaviour

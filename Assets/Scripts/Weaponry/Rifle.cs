@@ -21,6 +21,10 @@ public class Rifle : WeaponBase, IShoot, IReload
 
     private bool _running = false;
 
+    public int CurAmmo { get { return _curAmmo; } }
+
+    public int MaxAmmo { get { return _maxAmmo; } }
+
     public void Shoot(InputAction.CallbackContext obj)
     {
         if (obj.started)
@@ -121,6 +125,7 @@ public class Rifle : WeaponBase, IShoot, IReload
             yield return name;
         }
         transform.localRotation = Quaternion.identity;
+        Destroy(_recoilHelper.gameObject);
         _recoilHelper = null;
         recoil = 0;
         _running = false;

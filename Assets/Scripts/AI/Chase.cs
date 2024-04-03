@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 namespace AiStates
 {
@@ -11,6 +12,11 @@ namespace AiStates
 
         public override AIStateType OnStateUpdate()
         {
+            if (_myAgent.weapon.GetComponent<IAIWeapons>().IsShoot == true)
+            {
+                _myAgent.isShoot = false;
+                _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
+            }
             if (_myAgent.PlayerLastKnowPosition != null)
             {
                 _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
@@ -52,7 +58,6 @@ namespace AiStates
                 }
                 else if (true)
                 {
-                    Debug.Log("Ahhhhhh");
                     _myAgent.CanSeePlayer = false;
                     if (_myAgent.PlayerLastKnowPosition != null && _myAgent.Player != null)
                     {
@@ -63,19 +68,16 @@ namespace AiStates
             }
             if (Vector3.Distance(_myAgent.PlayerLastKnowPosition.transform.position, _myAgent.gameObject.transform.position) - _myAgent.PlayerLastKnowPosition.transform.position.y < 2)
             {
-                Debug.Log("Ahh");
                 return AIStateType.StartingState;
             }
             else if (_myAgent.CanSeePlayer == false)
             {
-                Debug.Log("Ahhh");
                 if (_myAgent.PlayerLastKnowPosition != null && _myAgent.Player != null)
                 {
                     _myAgent.PlayerLastKnowPosition.transform.rotation = _myAgent.Player.transform.rotation;
                     _myAgent.PlayerLastKnowPosition.SetActive(true);
                 }
             }
-            Debug.Log("Ahhhhh");
             return GetAIStateType;
         }
     }

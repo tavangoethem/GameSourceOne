@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 namespace AiStates
 {
@@ -29,10 +30,15 @@ namespace AiStates
 
         public bool CanSeePlayer = false;
 
+        public MonoBehaviour weapon;
+
+        public bool isShoot = false;
+
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 
         public void Start()
-        {
+        { 
+
             StartPosition = this.transform.position;
             _navAgent = GetComponent<NavMeshAgent>();
 
@@ -46,7 +52,6 @@ namespace AiStates
                     foundStates[i].InitState(this);
                 }
             }
-
             ChangeState(_curStateType);
         }
         private void Update()

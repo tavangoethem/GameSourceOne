@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 namespace AiStates
 {
@@ -17,26 +18,28 @@ namespace AiStates
             if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) < _myAgent._RangeAttack)
             {
                 transform.LookAt(_myAgent.Player.transform);
-                if (_myAgent.PlayerLastKnowPosition != null)
-                {
-                    _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
-                }
+                _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
                 RaycastHit hit;
                 if (Physics.Raycast(this.transform.position, toOther, out hit, _myAgent._isPlayerInRange))
                 {
                     if (hit.transform.GetComponent<MovementController>() != null)
                     {
-                        if (_myAgent.PlayerLastKnowPosition != null)
-                        {
-                            _myAgent.PlayerLastKnowPosition.transform.position = _myAgent.Player.transform.position;
-                        }
                         Debug.DrawRay(transform.position, toOther * 1000, Color.white);
-                        Debug.Log("Attack");
+                        if (_myAgent.isShoot == false)
+                        {
+                            _myAgent.isShoot = true;
+                            _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
+                            _myAgent.weapon.GetComponent<IAIWeapons>()?.AIShoot(_myAgent.Player);
+                        }
                     }
                 }
+                _myAgent.isShoot = false;
+                _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
             }
             else if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) > _myAgent._RangeAttack)
             {
+                _myAgent.isShoot = false;
+                _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
                 if (_myAgent.PlayerLastKnowPosition != null)
                 {
                     _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;

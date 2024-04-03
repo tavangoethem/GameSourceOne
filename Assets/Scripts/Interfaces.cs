@@ -29,11 +29,22 @@ namespace Weaponry
 
     public interface IReload 
     {
-        abstract void Reload(InputAction.CallbackContext obj);
-    };
+        int CurAmmo { get;}
+        int MaxAmmo { get;}
 
+        abstract void Reload(InputAction.CallbackContext obj);
+    }
     public interface IAltFire 
     {
         abstract void AltFire(InputAction.CallbackContext obj);
     };
+
+    public interface IAIWeapons
+    {
+        public abstract bool IsShoot { get;  }
+
+        abstract void AIShoot(GameObject target);
+
+        abstract void shootBool(bool shoot);
+    }
 }

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class TempHealthUI : MonoBehaviour
 {
-    [SerializeField] private PlayerCharacter _pChar;
+    private PlayerCharacter _pChar;
     [SerializeField] private TMPro.TMP_Text _healthText;
+
+    private void Start()
+    {
+        _pChar = PlayerCharacter.Instance;
+    }
 
     // Update is called once per frame
     void Update()

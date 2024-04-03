@@ -6,6 +6,7 @@ public class PlayerInteractionAndWeaponPickup : MonoBehaviour
     [Header("Interactable Stuff")]
     [SerializeField] private Transform _weaponHoldPoint;
     [SerializeField] private GameObject _curWeapon;
+    public GameObject CurWeapon { get { return _curWeapon; } }
     [SerializeField] private GameObject _highlightedInteractable;
     [SerializeField] private float _maxInteractableDistance = 3;
     private void Update()

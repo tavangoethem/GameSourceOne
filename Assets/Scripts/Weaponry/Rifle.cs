@@ -33,6 +33,7 @@ public class Rifle : WeaponBase, IShoot, IReload
         }
     }
 
+
     private void Update()
     {
         
@@ -132,4 +133,5 @@ public class Rifle : WeaponBase, IShoot, IReload
             Gizmos.DrawRay(_recoilHelper.position, _recoilHelper.forward);
         }
     }
+
 }

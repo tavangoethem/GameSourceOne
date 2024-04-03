@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 namespace AiStates
 {
@@ -11,6 +12,11 @@ namespace AiStates
 
         public override AIStateType OnStateUpdate()
         {
+            if (_myAgent.weapon.GetComponent<IAIWeapons>().IsShoot == true)
+            {
+                _myAgent.isShoot = false;
+                _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
+            }
             if (_myAgent.CanSeePlayer == true)
             {
                 if (_myAgent.PlayerLastKnowPosition != null)

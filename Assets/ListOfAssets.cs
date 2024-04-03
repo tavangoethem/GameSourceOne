@@ -18,5 +18,6 @@ public class ListOfAssets : MonoBehaviour
     Safety Barriers by PancakeMan96 - https://www.turbosquid.com/3d-models/free-safety-barriers-3d-model/623456
     Air Vents by Little Bunny - https://www.turbosquid.com/3d-models/air-vents-3d-model-1495396
     Explosive Barrel Free low-poly by HuNtEr_3DdD - https://www.turbosquid.com/3d-models/explosive-barrel-low-poly-3d-model-1590597
+    POLYGON Starter Pack - Low Poly 3D Art by Synty Studios - https://assetstore.unity.com/packages/essentials/tutorial-projects/polygon-starter-pack-low-poly-3d-art-by-synty-156819
      */
 }

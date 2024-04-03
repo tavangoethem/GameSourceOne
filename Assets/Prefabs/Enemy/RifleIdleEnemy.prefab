@@ -148,7 +148,7 @@ MonoBehaviour:
   forward: {x: 0, y: 0, z: 0}
   toOther: {x: 0, y: 0, z: 0}
   CanSeePlayer: 0
-  weapon: {fileID: 8632882592760013970}
+  weapon: {fileID: 77591302761873719}
   isShoot: 0
   Player: {fileID: 0}
 --- !u!114 &77591300814547819

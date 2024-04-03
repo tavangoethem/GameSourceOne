@@ -37,7 +37,8 @@ namespace AiStates
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 
         public void Start()
-        { 
+        {
+            Player = PlayerCharacter.Instance.gameObject;
 
             StartPosition = this.transform.position;
             _navAgent = GetComponent<NavMeshAgent>();

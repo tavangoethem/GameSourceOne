@@ -10,6 +10,9 @@ namespace AiStates
     {
         [SerializeField] private AIStateType _curStateType;
         [SerializeField] private AIStateBase _curState;
+
+        public AIStateBase CurState { get { return _curState; } }
+
         private Dictionary<AIStateType, AIStateBase> _states = new Dictionary<AIStateType, AIStateBase>();
 
         private NavMeshAgent _navAgent;

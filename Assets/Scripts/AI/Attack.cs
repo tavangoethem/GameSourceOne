@@ -17,7 +17,7 @@ namespace AiStates
             toOther = toOther.normalized;
             if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) < _myAgent._RangeAttack)
             {
-                transform.LookAt(_myAgent.Player.transform);
+                //transform.LookAt(_myAgent.Player.transform, Vector3.up);
                 _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
                 RaycastHit hit;
                 if (Physics.Raycast(this.transform.position, toOther, out hit, _myAgent._isPlayerInRange))

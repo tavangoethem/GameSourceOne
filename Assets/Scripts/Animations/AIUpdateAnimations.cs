@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 public class AIUpdateAnimations : MonoBehaviour
 {
@@ -13,11 +14,11 @@ public class AIUpdateAnimations : MonoBehaviour
 
         //print(isShooting);
 
-        print(velocity.magnitude);
+        //print(velocity.magnitude);
 
         //Anim.SetFloat("Horizontal", velocity.magnitude);
         Anim.SetFloat("Vertical", velocity.magnitude);
-        Anim.SetBool("IsShooting", isShooting);
+        Anim.SetBool("IsShooting", (GetComponent<AiStates.AIStates>().weapon as IAIWeapons).IsShoot);
     
     }
 }

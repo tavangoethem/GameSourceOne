@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Weaponry;
@@ -17,7 +18,8 @@ namespace AiStates
             toOther = toOther.normalized;
             if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) < _myAgent._RangeAttack)
             {
-                //transform.LookAt(_myAgent.Player.transform, Vector3.up);
+                //Vector3 tempDir = (_myAgent.Player.transform.position - _myAgent.transform.position).normalized;
+                transform.LookAt(new Vector3 (_myAgent.Player.transform.position.x, transform.position.y, _myAgent.Player.transform.position.z));
                 _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
                 RaycastHit hit;
                 if (Physics.Raycast(this.transform.position, toOther, out hit, _myAgent._isPlayerInRange))

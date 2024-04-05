@@ -170,7 +170,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Humanoid
+  m_Name: RifleEnemy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Vertical
@@ -254,7 +254,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8834443934865675850}
-    m_Position: {x: 400, y: 50, z: 0}
+    m_Position: {x: 290, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

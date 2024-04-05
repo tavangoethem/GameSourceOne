@@ -34,7 +34,7 @@ namespace AiStates
                 if (hit.transform.GetComponent<MovementController>() != null)
                 {
                     _myAgent.CanSeePlayer = true;
-                    Collider[] colls = Physics.OverlapSphere(transform.position, 60);
+                    Collider[] colls = Physics.OverlapSphere(transform.position, 10);
                     foreach (Collider coll in colls)
                     {
                         if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)

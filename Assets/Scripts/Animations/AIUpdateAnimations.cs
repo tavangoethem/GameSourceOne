@@ -6,11 +6,12 @@ using Weaponry;
 public class AIUpdateAnimations : MonoBehaviour
 {
     public Animator Anim;
-
+    public bool isShooting;
     public void Update()
     {
         Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
 
+        isShooting = Anim.GetBool("IsShooting");
         //print(isShooting);
 
         //print(velocity.magnitude);
@@ -20,7 +21,7 @@ public class AIUpdateAnimations : MonoBehaviour
             Anim.SetFloat("Vertical", 0);
         else
             Anim.SetFloat("Vertical", velocity.magnitude);
-        Anim.SetBool("IsShooting", (GetComponent<AiStates.AIStates>().CurState == GetComponent<Attack>()));
+        Anim.SetBool("IsShooting", (GetComponent<AIStates>().isStopped));
     
     }
 }

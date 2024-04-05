@@ -33,13 +33,22 @@ namespace AiStates
                             _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
                             _myAgent.weapon.GetComponent<IAIWeapons>()?.AIShoot(_myAgent.Player);
                         }
+                        if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) < _myAgent._RangeAttack / 2)
+                        {
+                            _myAgent.GetNavAgent.destination = this.transform.position;
+                            _myAgent.isStopped = true;
+                        }
+                        else
+                            _myAgent.isStopped = false;
                     }
                 }
-                _myAgent.isShoot = false;
+                else
+                    _myAgent.isShoot = false;
                 _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
             }
             else if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) > _myAgent._RangeAttack)
             {
+                _myAgent.isStopped = false;
                 _myAgent.isShoot = false;
                 _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
                 if (_myAgent.PlayerLastKnowPosition != null)

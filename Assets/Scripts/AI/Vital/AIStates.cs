@@ -36,6 +36,7 @@ namespace AiStates
         public MonoBehaviour weapon;
 
         public bool isShoot = false;
+        public bool isStopped = false;
 
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 

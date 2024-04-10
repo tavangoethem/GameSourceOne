@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Weaponry;
 
 namespace AiStates
 {
+    [Serializable]
+    public class ShootingEvent : UnityEvent { }
     public class Rifle : WeaponBase, IShoot, IReload
     {
         [SerializeField] private int _damage = 1;
@@ -29,6 +33,8 @@ namespace AiStates
 
         
         [SerializeField, Range(1, 15)] private int SoundOfGun;
+
+        public ShootingEvent shootingEvent;
 
         public void Shoot(InputAction.CallbackContext obj)
         {
@@ -70,7 +76,7 @@ namespace AiStates
             while (_isShoot && _curAmmo > 0 && _recoilHelper != null)
             {
                 Transform mainCam = Camera.main.transform;
-
+                shootingEvent.Invoke();
                 _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
                 _recoilHelper.position = mainCam.position;
                 RaycastHit hit;

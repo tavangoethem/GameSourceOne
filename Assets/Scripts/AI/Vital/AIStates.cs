@@ -38,6 +38,9 @@ namespace AiStates
         public bool isShoot = false;
         public bool isStopped = false;
 
+        public AudioManager audioManager;
+        public AudioClip movingClip;
+
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 
         public void Start()

@@ -17,6 +17,11 @@ public class MovementController : MonoBehaviour
     Vector3 velocity = new Vector3();
 
     public bool canCrouch = false;
+
+    public AudioManager audioManager;
+    public AudioClip crouchingClip;
+    public AudioClip indoorClip;
+    public AudioClip outdoorClip;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -36,6 +41,21 @@ public class MovementController : MonoBehaviour
 
         _verticalVelocity += Physics.gravity.y * Time.deltaTime;
         _verticalVelocity = Mathf.Clamp(_verticalVelocity, Physics.gravity.y, Mathf.Infinity);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))
+        {
+            if (velocity.magnitude > 0.01f)
+            {
+                if (hit.rigidbody.gameObject.layer.ToString() == "Indoors")
+                {
+                    audioManager.PlaySFX(indoorClip);
+                }
+                else if (hit.rigidbody.gameObject.layer.ToString() == "Outdoors")
+                {
+                    audioManager.PlaySFX(outdoorClip);
+                }
+            }
+        }
     }
 
     public void jumpNow()
@@ -51,6 +71,7 @@ public class MovementController : MonoBehaviour
     {
         if (canCrouch == true && _capsuleCollider.height == 1f)
         {
+            audioManager.PlaySFX(crouchingClip);
             _capsuleCollider.height = .5f;
             _capsuleCollider.center = new Vector3(0, -0.5f, 0);
             _characterController.height = 0.5f;
@@ -64,6 +85,7 @@ public class MovementController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
             {
+                audioManager.PlaySFX(crouchingClip);
                 _capsuleCollider.height = 1f;
                 _capsuleCollider.center = new Vector3(0, 0, 0);
                 _characterController.height = 2f;

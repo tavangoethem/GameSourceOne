@@ -1,3 +1,4 @@
+using AiStates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
 
     public bool IsShoot { get { return _isShoot; } }
 
+    ShootingEvent shootingEvent;
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -33,12 +35,12 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
     {
         while (_isShoot == true)
         {
-            
             running = true;
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             toOther = target.transform.position - transform.position;
             toOther = toOther.normalized;
             RaycastHit hit;
+            shootingEvent.Invoke();
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
                 print(hit.transform.name);

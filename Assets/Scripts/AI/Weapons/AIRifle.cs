@@ -1,3 +1,4 @@
+using AiStates;
 using System.Collections;
 using UnityEngine;
 using Weaponry;
@@ -13,13 +14,14 @@ public class AIRifle : MonoBehaviour, IAIWeapons
     bool running = false;
 
     public Vector3 toOther;
-
     public bool IsShoot { get { return _isShoot; } }
 
+    public ShootingEvent shootingEvent;
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
         {
+            shootingEvent.Invoke();
             StartCoroutine(Shooting(target));
         }
     }
@@ -39,6 +41,7 @@ public class AIRifle : MonoBehaviour, IAIWeapons
             RaycastHit hit;
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
+                shootingEvent.Invoke();
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
                     hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);

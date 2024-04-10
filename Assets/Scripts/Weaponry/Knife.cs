@@ -1,3 +1,4 @@
+using AiStates;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Weaponry;
@@ -11,8 +12,10 @@ public class Knife : WeaponBase, IShoot
 
     [SerializeField] private float AttackDistance = 2;
 
+    public ShootingEvent shootingEvent;
     public void Shoot(InputAction.CallbackContext obj)
     {
+        shootingEvent.Invoke();
         Transform mainCam = Camera.main.transform;
 
         RaycastHit hit;

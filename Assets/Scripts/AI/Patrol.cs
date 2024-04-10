@@ -15,6 +15,13 @@ namespace AiStates
 
         public override AIStateType OnStateUpdate()
         {
+            if (_myAgent.CanSeePlayer == true)
+            {
+                _myAgent.PlayerLastKnowPosition.transform.position = _myAgent.Player.transform.position;
+                if (_myAgent.Player != null)
+                    _myAgent.GetNavAgent.destination = _myAgent.Player.transform.position;
+                return AIStateType.Chase;
+            }
             if (_myAgent.Player != null)
             {
                 _myAgent.GetNavAgent.destination = _Checkpoints[_CheckpointDest].position;

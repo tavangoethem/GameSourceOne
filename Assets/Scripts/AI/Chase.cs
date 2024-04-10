@@ -12,6 +12,7 @@ namespace AiStates
 
         public override AIStateType OnStateUpdate()
         {
+            _myAgent.audioManager.PlaySFX(_myAgent.movingClip);
             if (_myAgent.weapon.GetComponent<IAIWeapons>().IsShoot == true)
             {
                 _myAgent.isShoot = false;

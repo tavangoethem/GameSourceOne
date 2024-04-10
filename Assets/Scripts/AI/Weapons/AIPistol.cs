@@ -1,3 +1,4 @@
+using AiStates;
 using System.Collections;
 using UnityEngine;
 using Weaponry;
@@ -16,6 +17,8 @@ public class AIPistol : MonoBehaviour, IAIWeapons
 
     public bool IsShoot { get { return _isShoot; } }
 
+    public ShootingEvent shootingEvent;
+
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -30,6 +33,7 @@ public class AIPistol : MonoBehaviour, IAIWeapons
 
     public IEnumerator Shooting(GameObject target)
     {
+        shootingEvent.Invoke();
         while (_isShoot == true)
         {
             running = true;

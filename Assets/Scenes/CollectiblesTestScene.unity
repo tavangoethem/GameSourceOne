@@ -1173,6 +1173,8 @@ MonoBehaviour:
   weapon: {fileID: 8565142915697081735}
   isShoot: 0
   isStopped: 0
+  audioManager: {fileID: 0}
+  movingClip: {fileID: 0}
   Player: {fileID: 858249154}
 --- !u!195 &658043522
 NavMeshAgent:
@@ -2149,6 +2151,9 @@ MonoBehaviour:
   _fireRate: 0.5
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
+  shootingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1559280477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2207,6 +2212,34 @@ PrefabInstance:
     - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
       propertyPath: SoundOfGun
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 869953128}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}

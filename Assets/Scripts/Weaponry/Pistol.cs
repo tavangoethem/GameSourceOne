@@ -1,8 +1,8 @@
+using AiStates;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Weaponry;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class Pistol : WeaponBase, IShoot, IReload
 {
@@ -25,8 +25,20 @@ public class Pistol : WeaponBase, IShoot, IReload
 
     public int MaxAmmo { get { return _maxAmmo; } }
 
+    [SerializeField, Range(1, 15)] private int SoundOfGun;
+
+    public ShootingEvent shootingEvent;
     public void Shoot(InputAction.CallbackContext obj)
     {
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGun);
+        foreach (Collider coll in colls)
+        {
+            if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+            {
+                coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+            }
+        }
+        shootingEvent.Invoke();
         if (_recoilHelper == null)
         {
             _recoilHelper = new GameObject("RecoilHelper").transform;
@@ -54,6 +66,14 @@ public class Pistol : WeaponBase, IShoot, IReload
         Ray cameraRay = new Ray(mainCam.position, _recoilHelper.forward);
         if (Physics.Raycast(cameraRay, out hit))
         {
+            Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
+            foreach (Collider coll in colls1)
+            {
+                if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+                {
+                    coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+                }
+            }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
                 hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
         }

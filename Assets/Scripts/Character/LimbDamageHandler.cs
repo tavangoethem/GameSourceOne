@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LimbDamageHandler : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class LimbDamageHandler : MonoBehaviour
         SetRBsKinematic(false);
         GetComponent<Animator>().enabled = false;
         GetComponent<AiStates.AIStates>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
     }
 
     public void GetAllRBs()

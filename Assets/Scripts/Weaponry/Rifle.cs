@@ -76,7 +76,7 @@ namespace AiStates
             while (_isShoot && _curAmmo > 0 && _recoilHelper != null)
             {
                 Transform mainCam = Camera.main.transform;
-                shootingEvent.Invoke();
+                shootingEvent?.Invoke();
                 _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
                 _recoilHelper.position = mainCam.position;
                 RaycastHit hit;

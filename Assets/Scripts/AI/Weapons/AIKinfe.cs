@@ -16,7 +16,7 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
 
     public Vector3 toOther;
 
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
     ShootingEvent shootingEvent;
     public void AIShoot(GameObject target)

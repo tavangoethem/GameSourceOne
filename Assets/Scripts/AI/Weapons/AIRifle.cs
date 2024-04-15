@@ -14,7 +14,7 @@ public class AIRifle : MonoBehaviour, IAIWeapons
     bool running = false;
 
     public Vector3 toOther;
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
     AudioSource shootingSound;
     private void Start()

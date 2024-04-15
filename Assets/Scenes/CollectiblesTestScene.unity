@@ -2376,6 +2376,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2996644541137096961, guid: 3e42e21c59c2e6d4bb256ec2af2a8785, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b47f9eb4038faa4e98e4accd9a826b4, type: 3}
+    - target: {fileID: 2996644541137096961, guid: 3e42e21c59c2e6d4bb256ec2af2a8785, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e42e21c59c2e6d4bb256ec2af2a8785, type: 3}
 --- !u!1 &1774483340

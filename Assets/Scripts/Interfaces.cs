@@ -41,7 +41,7 @@ namespace Weaponry
 
     public interface IAIWeapons
     {
-        public abstract bool IsShoot { get;  }
+        public abstract bool IsShoot { get; set; }
 
         abstract void AIShoot(GameObject target);
 

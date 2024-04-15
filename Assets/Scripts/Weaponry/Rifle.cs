@@ -31,17 +31,17 @@ namespace AiStates
 
         public int MaxAmmo { get { return _maxAmmo; } }
 
-        
-        [SerializeField, Range(1, 15)] private int SoundOfGun;
 
-        public ShootingEvent shootingEvent;
+        [SerializeField, Range(1, 15)] private int SoundOfGunForEnemys;
+
+        AudioSource shootingSound;
 
         public void Shoot(InputAction.CallbackContext obj)
         {
             if (obj.started)
             {
                 StartCoroutine(Shooting());
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGun);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGunForEnemys);
                 foreach (Collider coll in colls)
                 {
                     if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
@@ -59,6 +59,10 @@ namespace AiStates
 
         private void Update()
         {
+            if (shootingSound == null)
+            {
+                shootingSound = this.GetComponent<AudioSource>();
+            }
 
         }
 
@@ -71,12 +75,12 @@ namespace AiStates
                 _recoilHelper.rotation = Camera.main.transform.rotation;
 
             }
-
             _isShoot = true;
             while (_isShoot && _curAmmo > 0 && _recoilHelper != null)
             {
+                shootingSound.Play();
                 Transform mainCam = Camera.main.transform;
-                shootingEvent?.Invoke();
+
                 _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
                 _recoilHelper.position = mainCam.position;
                 RaycastHit hit;

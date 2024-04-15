@@ -2228,9 +2228,6 @@ MonoBehaviour:
   _fireRate: 0.5
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
-  shootingEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1559280477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2290,6 +2287,10 @@ PrefabInstance:
       propertyPath: SoundOfGun
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
+      propertyPath: shootingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
     - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
       propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -3281,9 +3282,6 @@ MonoBehaviour:
   _fireRate: 0.5
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
-  shootingEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &638748935006457366
 GameObject:
   m_ObjectHideFlags: 0

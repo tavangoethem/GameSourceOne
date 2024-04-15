@@ -22,7 +22,7 @@ public class LimbDamageHandler : MonoBehaviour
 
     public void GetAllRBs()
     {
-        _rbs.Clear();
+        _rbs = new List<Rigidbody>();
         var temp = GetComponentsInChildren<Rigidbody>();
 
         foreach (var rb in temp)

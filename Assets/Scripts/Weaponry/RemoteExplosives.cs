@@ -1,3 +1,4 @@
+using AiStates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ public class RemoteExplosives : WeaponBase, IShoot, IAltFire
     private List<Explosive> Explosives = new List<Explosive>();
     [SerializeField] private GameObject _explosive;
 
+    public ShootingEvent shootingEvent;
     public void Shoot(InputAction.CallbackContext obj)
     {
         GameObject temp = Instantiate(_explosive, _firePoint.position, Quaternion.identity);
@@ -21,8 +23,11 @@ public class RemoteExplosives : WeaponBase, IShoot, IAltFire
     {
         foreach (Explosive exp in Explosives)
         {
-            if(exp != null)
+            if (exp != null)
+            {
+                shootingEvent.Invoke();
                 exp.Explode();
+            }
         }
         Explosives = new List<Explosive>();
     }

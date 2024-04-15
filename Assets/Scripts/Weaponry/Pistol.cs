@@ -38,7 +38,6 @@ public class Pistol : WeaponBase, IShoot, IReload
                 coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
             }
         }
-        shootingEvent.Invoke();
         if (_recoilHelper == null)
         {
             _recoilHelper = new GameObject("RecoilHelper").transform;
@@ -59,7 +58,7 @@ public class Pistol : WeaponBase, IShoot, IReload
         //}
 
         Transform mainCam = Camera.main.transform;
-
+        shootingEvent.Invoke();
         _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
         _recoilHelper.position = mainCam.position;
         RaycastHit hit;

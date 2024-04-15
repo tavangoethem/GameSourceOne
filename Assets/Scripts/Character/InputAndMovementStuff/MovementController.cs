@@ -44,15 +44,15 @@ public class MovementController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))
         {
-            if (velocity.magnitude > 0.01f)
+            if (velocity.magnitude > 0.01f && audioManager != null)
             {
                 if (hit.rigidbody.gameObject.layer.ToString() == "Indoors")
                 {
-                    audioManager.PlaySFX(indoorClip);
+                    audioManager?.PlaySFX(indoorClip);
                 }
                 else if (hit.rigidbody.gameObject.layer.ToString() == "Outdoors")
                 {
-                    audioManager.PlaySFX(outdoorClip);
+                    audioManager?.PlaySFX(outdoorClip);
                 }
             }
         }
@@ -71,7 +71,8 @@ public class MovementController : MonoBehaviour
     {
         if (canCrouch == true && _capsuleCollider.height == 1f)
         {
-            audioManager.PlaySFX(crouchingClip);
+            if (audioManager != null)
+                audioManager?.PlaySFX(crouchingClip);
             _capsuleCollider.height = .5f;
             _capsuleCollider.center = new Vector3(0, -0.5f, 0);
             _characterController.height = 0.5f;
@@ -85,7 +86,7 @@ public class MovementController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
             {
-                audioManager.PlaySFX(crouchingClip);
+                audioManager?.PlaySFX(crouchingClip);
                 _capsuleCollider.height = 1f;
                 _capsuleCollider.center = new Vector3(0, 0, 0);
                 _characterController.height = 2f;

@@ -21,9 +21,6 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
 
     public void TakeDamage(int amount, Vector3 damagePosition)
     {
-        explode.Invoke();
-        //Debug.Log("Hit barrel");
-
         if (_hasExploded)
         {
             return;
@@ -40,6 +37,7 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
             collidersFound[i].GetComponent<IDamagable>()?.TakeDamage(_explosionDamage, damagePosition);
         }
 
+        explode?.Invoke();
         Die();
     }
 

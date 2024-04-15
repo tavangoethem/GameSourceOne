@@ -6,6 +6,6 @@ public class BasicRifleEnemyCharacter : CharacterBase
 {
     public override void Die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

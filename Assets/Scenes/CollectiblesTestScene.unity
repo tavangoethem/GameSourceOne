@@ -1812,6 +1812,7 @@ MonoBehaviour:
   health:
     maxHealth: 99
     curHealth: 0
+  _armorType: 0
 --- !u!114 &869953134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,7 +3704,7 @@ MonoBehaviour:
   _fireRate: 0.5
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
-  shootingSound: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
+  shootingSound: {fileID: 0}
 --- !u!1 &638748935006457366
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,6 +4634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 2
+  _armorType: 1
 --- !u!4 &1748664745230950719
 Transform:
   m_ObjectHideFlags: 0
@@ -4754,6 +4756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 3
 --- !u!114 &1748664745230950726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4801,6 +4804,7 @@ MonoBehaviour:
   health:
     maxHealth: 15
     curHealth: 0
+  _armorType: 1
 --- !u!4 &1748664745230950729
 Transform:
   m_ObjectHideFlags: 0
@@ -4850,7 +4854,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748664745230793895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 991ec40355619454cab3947a2cf3ef4e, type: 3}
   m_Name: 
@@ -4870,10 +4874,10 @@ MonoBehaviour:
   isStopped: 0
   _outsideLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   _insideLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   indoorClip: {fileID: 1098815287}
   outdoorClip: {fileID: 1374546119}
   Player: {fileID: 0}
@@ -5055,6 +5059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 3
 --- !u!4 &1748664745230952005
 Transform:
   m_ObjectHideFlags: 0
@@ -5380,6 +5385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!4 &2714596782434483762
 Transform:
   m_ObjectHideFlags: 0
@@ -5697,6 +5703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!4 &3558618865189505109
 Transform:
   m_ObjectHideFlags: 0
@@ -6230,6 +6237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!4 &4920460428454240981
 Transform:
   m_ObjectHideFlags: 0
@@ -6387,6 +6395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!1001 &5334175333388228763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6788,6 +6797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!1 &5826264606445855395
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,6 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 3
 --- !u!4 &8068719537857477080
 Transform:
   m_ObjectHideFlags: 0
@@ -7502,6 +7513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!4 &8482265205397934886
 Transform:
   m_ObjectHideFlags: 0
@@ -7624,6 +7636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
+  _armorType: 1
 --- !u!4 &8565142915697081730
 Transform:
   m_ObjectHideFlags: 0

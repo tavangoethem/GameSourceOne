@@ -34,7 +34,7 @@ namespace AiStates
 
         [SerializeField, Range(1, 15)] private int SoundOfGunForEnemys;
 
-        AudioSource shootingSound;
+        [SerializeField] AudioClip shootingSound;
 
         public void Shoot(InputAction.CallbackContext obj)
         {
@@ -56,16 +56,6 @@ namespace AiStates
             }
         }
 
-
-        private void Update()
-        {
-            if (shootingSound == null)
-            {
-                shootingSound = this.GetComponent<AudioSource>();
-            }
-
-        }
-
         public IEnumerator Shooting()
         {
             if (_recoilHelper == null)
@@ -78,7 +68,8 @@ namespace AiStates
             _isShoot = true;
             while (_isShoot && _curAmmo > 0 && _recoilHelper != null)
             {
-                shootingSound.Play();
+                if (shootingSound != null)
+                    AudioManager.instance.PlaySFX(shootingSound, transform, 1);
                 Transform mainCam = Camera.main.transform;
 
                 _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);

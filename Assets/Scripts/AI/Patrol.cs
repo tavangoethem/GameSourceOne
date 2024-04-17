@@ -15,7 +15,7 @@ namespace AiStates
 
         public override AIStateType OnStateUpdate()
         {
-            _myAgent?.audioManager?.PlaySFX(_myAgent.movingClip);
+            //_myAgent?.audioManager?.PlaySFX(_myAgent.movingClip);
             if (_myAgent.CanSeePlayer == true)
             {
                 _myAgent.PlayerLastKnowPosition.transform.position = _myAgent.Player.transform.position;

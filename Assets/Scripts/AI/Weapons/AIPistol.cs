@@ -15,9 +15,9 @@ public class AIPistol : MonoBehaviour, IAIWeapons
 
     public Vector3 toOther;
 
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
-    public ShootingEvent shootingEvent;
+    [SerializeField] AudioClip shootingSound;
 
     public void AIShoot(GameObject target)
     {
@@ -33,7 +33,7 @@ public class AIPistol : MonoBehaviour, IAIWeapons
 
     public IEnumerator Shooting(GameObject target)
     {
-        shootingEvent.Invoke();
+        AudioManager.instance.PlaySFX(shootingSound, transform, 1);
         while (_isShoot == true)
         {
             running = true;

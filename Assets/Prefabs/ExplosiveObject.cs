@@ -24,9 +24,6 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
 
     public void TakeDamage(float amount, Vector3 damagePosition, ArmorType levelofPierce)
     {
-        explode.Invoke();
-        //Debug.Log("Hit barrel");
-
         if (_hasExploded)
         {
             return;
@@ -43,6 +40,7 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
             collidersFound[i].GetComponent<IDamagable>()?.TakeDamage(_explosionDamage, damagePosition, ArmorType.heavy);
         }
 
+        explode?.Invoke();
         Die();
     }
 

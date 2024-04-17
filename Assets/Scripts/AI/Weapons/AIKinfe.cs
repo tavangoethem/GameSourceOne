@@ -16,9 +16,9 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
 
     public Vector3 toOther;
 
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
-    ShootingEvent shootingEvent;
+    [SerializeField] AudioClip shootingSound;
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -40,7 +40,7 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
             toOther = target.transform.position - transform.position;
             toOther = toOther.normalized;
             RaycastHit hit;
-            shootingEvent.Invoke();
+            AudioManager.instance.PlaySFX(shootingSound, transform, 1);
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
                 print(hit.transform.name);

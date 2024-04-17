@@ -19107,9 +19107,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &607595524
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27481,9 +27479,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &834899146
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29261,7 +29257,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a0f45cf90ba3514a8a98599a2de1c50, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.88
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -36903,9 +36899,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1213676595
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56081,9 +56075,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1789010091
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58767,21 +58759,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 465651238}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1841332502
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59408,9 +59386,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1882594776
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59680,9 +59656,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1890276659
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59878,9 +59852,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 33790622460275367, guid: 8e36866e46e585d4b833823bf1476b16, type: 3}
   _gizmoColor: {r: 0.4034536, g: 1, b: 0, a: 1}
   _explosionDamage: 50
-  explode:
-    m_PersistentCalls:
-      m_Calls: []
+  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!136 &1903439212
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -276,10 +276,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 488739107032287529}
-  _damage: 1
+  _damage: 2
   _maxAmmo: 6
   _curAmmo: 0
   _speed: 0.1
+  recoil: 0
+  _recoilHelper: {fileID: 0}
+  SoundOfGun: 0
+  shootingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &5552140729564515168
 Rigidbody:
   m_ObjectHideFlags: 0

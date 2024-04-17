@@ -7285,7 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  _armorType: 3
 --- !u!4 &8068719537857477080
 Transform:
   m_ObjectHideFlags: 0

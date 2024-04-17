@@ -17,16 +17,30 @@ public class Limb : MonoBehaviour, IDamagable
        //unnessasary
     }
 
+    //DAMAGE CALCULATIONS!
     public void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce)
     {
         if (Owner == null)
             return;
+        print($"LoP {(int)levelOfPierce} > A {(int)_armorType}");
+
+        //if the limb does not have sufficiant armor
         if ((int)levelOfPierce > (int)_armorType)
+        {
+            //just deal the damage times the multiplier
             Owner.TakeDamage((damageToTake * _damageMultiplyer), damagePosition, ArmorType.heavy);
+
+            print($"DV {damageToTake} * DM{_damageMultiplyer}");
+        }
         else
+        {
+            //deal the damage times the multiplier divided by the armor difference
             Owner.TakeDamage((damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType, damagePosition, ArmorType.heavy);
-        print($"DV {damageToTake} * DM {_damageMultiplyer} * LoP{(float)levelOfPierce} / A {(float)_armorType} = " +
-            $"{(damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType}");
+
+            print($"DV {damageToTake} * DM {_damageMultiplyer} * LoP{(float)levelOfPierce} / A {(float)_armorType} = " +
+           $"{(damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType}");
+        }
+       
         //print((float)levelOfPierce / (float)_armorType);
     }
 }

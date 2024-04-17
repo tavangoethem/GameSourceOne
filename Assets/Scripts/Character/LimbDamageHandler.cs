@@ -20,6 +20,7 @@ public class LimbDamageHandler : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         GetComponent<AiStates.AIStates>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<Collider>().enabled = false; 
     }
 
     public void GetAllRBs()

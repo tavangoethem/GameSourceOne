@@ -59,11 +59,9 @@ public class DoorScript : MonoBehaviour, IInteractable
             if (objAttemptingInteraction.GetComponent<CharacterInventory>().CurKeys.HasFlag(_keysRequired) == true)
             {
                 DoorInteraction();
-                AudioManager.instance?.PlaySFX(_openClip);
+                AudioManager.instance?.PlaySFX(_openClip, transform, 1);
             }
-            else
                 //locked noise or stuff 
-                ;
         }        
     }
 }

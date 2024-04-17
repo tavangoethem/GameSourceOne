@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using Weaponry;
 
 public class LimbDamageHandler : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class LimbDamageHandler : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         GetComponent<AiStates.AIStates>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
-        GetComponent<AiStates.AIStates>().weapon.GetComponent<IAIWeapons>().IsShoot = false;
+        GetComponent<Collider>().enabled = false; 
     }
 
     public void GetAllRBs()

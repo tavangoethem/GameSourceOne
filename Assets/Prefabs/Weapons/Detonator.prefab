@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 378201297348587678}
   _explosive: {fileID: 6814944761773920284, guid: c1c142d961741e642b1c6b94c6c7df39, type: 3}
+  shootingSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
 --- !u!54 &378201296623897912
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -183,10 +183,8 @@ MonoBehaviour:
   _curAmmo: 0
   _fireRate: 0.1
   recoil: 0
-  SoundOfGun: 0
-  shootingEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  SoundOfGunForEnemys: 0
+  shootingSound: {fileID: 0}
 --- !u!54 &8565142917093860767
 Rigidbody:
   m_ObjectHideFlags: 0

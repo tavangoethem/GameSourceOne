@@ -38,8 +38,12 @@ namespace AiStates
         public bool isShoot = false;
         public bool isStopped = false;
 
-        public AudioManager audioManager;
-        public AudioClip movingClip;
+        [SerializeField] private LayerMask _outsideLayer;
+        [SerializeField] private LayerMask _insideLayer;
+        private LayerMask _tempMask;
+
+        public AudioSource indoorClip;
+        public AudioSource outdoorClip;
 
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 
@@ -74,6 +78,25 @@ namespace AiStates
                 if (PlayerLastKnowPosition == null)
                 {
                     Debug.LogError("Add Prefab PlayerShadow to the scene otherwise the AI wont Function");
+                }
+            }
+            if ((Mathf.Abs(_navAgent.velocity.x) > 2f) || Mathf.Abs(_navAgent.velocity.z) > 2f)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))
+                {
+                    if (indoorClip != null || outdoorClip != null)
+                    {
+                        _tempMask = (_tempMask | (1 << hit.transform.gameObject.layer));
+                    }
+                    if (_insideLayer == _tempMask && !indoorClip.isPlaying)
+                    {
+                        indoorClip.Play();
+                    }
+                    else if (_outsideLayer == _tempMask && !outdoorClip.isPlaying)
+                    {
+                        outdoorClip.Play();
+                    }
                 }
             }
         }

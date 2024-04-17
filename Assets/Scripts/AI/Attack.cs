@@ -53,7 +53,7 @@ namespace AiStates
                 _myAgent.weapon.GetComponent<IAIWeapons>()?.shootBool(_myAgent.isShoot);
                 if (_myAgent.PlayerLastKnowPosition != null)
                 {
-                    _myAgent.audioManager.PlaySFX(_myAgent.movingClip);
+                    //_myAgent.audioManager.PlaySFX(_myAgent.movingClip);
                     _myAgent.GetNavAgent.destination = _myAgent.PlayerLastKnowPosition.transform.position;
                 }
                 if (Vector3.Distance(_myAgent.Player.transform.position, transform.position) > _myAgent._isPlayerInRange)

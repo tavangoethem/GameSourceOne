@@ -45,7 +45,7 @@ public class AIPistol : MonoBehaviour, IAIWeapons
             {
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
-                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
                 }
             }
             yield return new WaitForSeconds(_fireRate);

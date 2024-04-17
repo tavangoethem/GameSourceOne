@@ -46,7 +46,7 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
                 print(hit.transform.name);
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
-                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.none);
                 }
             }
             yield return new WaitForSeconds(_fireRate);

@@ -74,7 +74,7 @@ public class Pistol : WeaponBase, IShoot, IReload
                 }
             }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
         }
 
         _curAmmo--;

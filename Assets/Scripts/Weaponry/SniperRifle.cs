@@ -57,7 +57,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
                 }
             }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.heavy);
         }
 
         _curAmmo--;

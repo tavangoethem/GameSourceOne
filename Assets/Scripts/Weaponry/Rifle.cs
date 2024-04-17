@@ -89,7 +89,7 @@ namespace AiStates
                 {
                     if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
                     {
-                        hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                        hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
                         Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
                         foreach (Collider coll in colls1)
                         {

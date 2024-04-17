@@ -2,8 +2,6 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class Explode : UnityEvent { }
 public class ExplosiveObject : MonoBehaviour, IDamagable
 {
     [SerializeField, Min(0f)] private float _explodeRange;
@@ -12,9 +10,9 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
     [SerializeField] private int _explosionDamage = 50;
     private bool _hasExploded = false;
 
-    public Explode explode;
-
     public ArmorType ArmorType { get { return ArmorType.none; } }
+
+    [SerializeField] AudioClip ExplosionSound;
 
     private void OnDrawGizmos()
     {
@@ -40,7 +38,7 @@ public class ExplosiveObject : MonoBehaviour, IDamagable
             collidersFound[i].GetComponent<IDamagable>()?.TakeDamage(_explosionDamage, damagePosition, ArmorType.heavy);
         }
 
-        explode?.Invoke();
+        AudioManager.instance.PlaySFX(ExplosionSound, this.transform.position, 1);
         Die();
     }
 

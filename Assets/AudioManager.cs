@@ -52,12 +52,28 @@ public class AudioManager : MonoBehaviour
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length));
     }
+    public void PlaySFX(AudioClip clipToPlay, Vector3 origin, float spacialBlend)
+    {
+        GameObject tempGO = new GameObject("TempAudio");
+
+        tempGO.transform.position = origin;
+        AudioSource temp = tempGO.AddComponent<AudioSource>();
+
+        temp.clip = clipToPlay;
+        temp.spatialBlend = spacialBlend;
+        temp.Play();
+        StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length, true));
+    }
+
 
     //Destroy the audio source component once the sound is finished.  Only called when the audio is spacial. 
-    private IEnumerator DestroySourceAfterDuration(AudioSource sourceToDestroy, float duration)
+    private IEnumerator DestroySourceAfterDuration(AudioSource sourceToDestroy, float duration, bool destoryObject = false)
     {
         yield return new WaitForSeconds(duration);
-        Destroy(sourceToDestroy);
+        if(destoryObject == false)
+            Destroy(sourceToDestroy);
+        else
+            Destroy(sourceToDestroy.gameObject);
     }
 
     // Calls the Background music Coroutine. We use a seperate method because coroutines can only be called in 

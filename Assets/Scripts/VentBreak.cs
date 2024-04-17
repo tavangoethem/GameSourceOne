@@ -7,18 +7,18 @@ public class VentBreak : MonoBehaviour, IDamagable
     public ArmorType ArmorType { get { return _armorType; } }
     private ArmorType _armorType = ArmorType.none;
 
-    public void TakeDamage(int amount, Vector3 damagePosition, ArmorType levelofPierce)
+    [SerializeField] AudioClip _audioClip;
+
+    public void TakeDamage(float amount, Vector3 damagePosition, ArmorType levelofPierce)
     {
         Die();
     }
 
     public void Die()
     {
+        AudioManager.instance.PlaySFX(_audioClip, this.transform.position, 1);
         Destroy(gameObject);
     }
 
-    public void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce)
-    {
-        throw new System.NotImplementedException();
-    }
+
 }

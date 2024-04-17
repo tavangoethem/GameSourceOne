@@ -105,17 +105,17 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
 
     public void AltFire(InputAction.CallbackContext obj)
     {
-        print("attempted alt fire");
+        //print("attempted alt fire");
         if (_isZoomed == false)
         {
-            print("zoomed");
+            //print("zoomed");
             Camera.main.fieldOfView = 15f;
             Camera.main.GetComponent<CameraLook>().Sens = _zoomSens;
             _isZoomed = true;
         }
         else if (_isZoomed == true)
         {
-            print("Unzoomed");
+            //print("Unzoomed");
             Camera.main.fieldOfView = 60f;
             Camera.main.GetComponent<CameraLook>().Sens = 10;
             _isZoomed = false;

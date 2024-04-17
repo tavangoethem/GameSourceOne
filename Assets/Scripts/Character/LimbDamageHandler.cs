@@ -17,10 +17,6 @@ public class LimbDamageHandler : MonoBehaviour
     public void OnDeath()
     {
         SetRBsKinematic(false);
-        GetComponent<Animator>().enabled = false;
-        GetComponent<AiStates.AIStates>().enabled = false;
-        GetComponent<NavMeshAgent>().enabled = false;
-        GetComponent<Collider>().enabled = false; 
     }
 
     public void GetAllRBs()

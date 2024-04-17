@@ -24,6 +24,9 @@ public class Limb : MonoBehaviour, IDamagable
         if ((int)levelOfPierce > (int)_armorType)
             Owner.TakeDamage((damageToTake * _damageMultiplyer), damagePosition, ArmorType.heavy);
         else
-            Owner.TakeDamage((damageToTake * _damageMultiplyer) / ((int)levelOfPierce / (int)_armorType), damagePosition, ArmorType.heavy);
+            Owner.TakeDamage((damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType, damagePosition, ArmorType.heavy);
+        print($"DV {damageToTake} * DM {_damageMultiplyer} * LoP{(float)levelOfPierce} / A {(float)_armorType} = " +
+            $"{(damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType}");
+        //print((float)levelOfPierce / (float)_armorType);
     }
 }

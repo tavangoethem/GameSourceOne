@@ -1836,6 +1836,8 @@ MonoBehaviour:
   weapon: {fileID: 2552554881842997404}
   isShoot: 0
   isStopped: 0
+  audioManager: {fileID: 0}
+  movingClip: {fileID: 0}
   Player: {fileID: 0}
 --- !u!114 &2552554882839218408
 MonoBehaviour:

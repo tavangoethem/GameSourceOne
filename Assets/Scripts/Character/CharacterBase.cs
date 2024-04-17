@@ -2,20 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 {
     [SerializeField] protected Health health;
     public Health Heath { get { return health; } }
+
+    public ArmorType ArmorType { get { return _armorType; } }
+    [SerializeField] private ArmorType _armorType;
+
     public virtual void Awake()
     {
         health.Init();
         health.OnDeath += Die;
     }
 
-    public virtual void TakeDamage(int damageToTake, Vector3 damagePosition)
+    public virtual void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce)
     {
-        health.TakeDamage(damageToTake, damagePosition);
+        if ((int)levelOfPierce > (int)_armorType)
+            health.TakeDamage((damageToTake), damagePosition);
+        else
+            health.TakeDamage((damageToTake) / ((int)levelOfPierce / (int)_armorType), damagePosition);
+
     }
 
     public virtual void Die()
@@ -23,7 +32,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 
     }
 
-    public void HealDamage(int valueToHeal)
+    public void HealDamage(float valueToHeal)
     {
         health.HealDamage(valueToHeal);
     }
@@ -32,8 +41,8 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 [Serializable]
 public class Health
 {
-    public int maxHealth = 10;
-    public int curHealth;
+    public float maxHealth = 10;
+    public float curHealth;
 
     public event Action<Vector3> OnDamage;
     public event Action OnDeath;
@@ -43,14 +52,14 @@ public class Health
         curHealth = maxHealth;
     }
 
-    public void HealDamage(int valueToHeal)
+    public void HealDamage(float valueToHeal)
     {
         curHealth += valueToHeal;
         if(curHealth > maxHealth)
             curHealth = maxHealth;
     }
 
-    public void TakeDamage(int damageToTake, Vector3 position)
+    public void TakeDamage(float damageToTake, Vector3 position)
     {
         curHealth -= damageToTake;
         OnDamage?.Invoke(position);

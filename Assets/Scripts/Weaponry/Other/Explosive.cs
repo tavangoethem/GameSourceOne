@@ -10,6 +10,8 @@ public class Explosive : MonoBehaviour, IDamagable
 
     private bool _hasExploded = false;
 
+    public ArmorType ArmorType { get { return ArmorType.none; } }
+
     public void Die()
     {
     }
@@ -25,11 +27,11 @@ public class Explosive : MonoBehaviour, IDamagable
         foreach (Collider coll in colls)
         {
             if(coll != gameObject.GetComponent<Collider>())
-                coll.GetComponent<IDamagable>()?.TakeDamage(_damage, coll.ClosestPoint(transform.position));
+                coll.GetComponent<IDamagable>()?.TakeDamage(_damage, coll.ClosestPoint(transform.position), ArmorType.heavy);
         }
         Destroy(gameObject);
     }
-    public void TakeDamage(int damageToTake, Vector3 damagePosition)
+    public void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelofPierce)
     {
         Explode();
     }

@@ -14,21 +14,14 @@ public class AIRifle : MonoBehaviour, IAIWeapons
     bool running = false;
 
     public Vector3 toOther;
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
-    AudioSource shootingSound;
-    private void Start()
-    {
-        if (shootingSound == null)
-        {
-            shootingSound = this?.GetComponent<AudioSource>();
-        }
-    }
+    [SerializeField] AudioClip shootingSound;
+
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
         {
-            shootingSound.Play();
             StartCoroutine(Shooting(target));
         }
     }
@@ -48,10 +41,10 @@ public class AIRifle : MonoBehaviour, IAIWeapons
             RaycastHit hit;
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
-                shootingSound.Play();
+                AudioManager.instance.PlaySFX(shootingSound, transform, 1);
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
-                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
                 }
             }
             yield return new WaitForSeconds(_fireRate);

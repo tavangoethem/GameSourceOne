@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
-    [SerializeField, Range(0,20)] private float _sensitivty = 5f;
+    [SerializeField, Range(0, 20)] private float _sensitivty = 5f;
     [SerializeField] private float _verticalRange = 60f;
+
+    public float Sens { get { return _sensitivty; } set { _sensitivty = value; } }
 
     private float _currentVerticalRotation = 0f;
     private Camera _camera;

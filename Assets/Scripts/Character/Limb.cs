@@ -8,14 +8,22 @@ public class Limb : MonoBehaviour, IDamagable
 
     [SerializeField] private float _damageMultiplyer = 1f;
 
+    public ArmorType ArmorType { get { return _armorType; } }
+
+    [SerializeField] private ArmorType _armorType = ArmorType.none;
+
     public void Die()
     {
        //unnessasary
     }
 
-    public void TakeDamage(int damageToTake, Vector3 damagePosition)
+    public void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce)
     {
-        if(Owner != null)
-            Owner.TakeDamage(Mathf.CeilToInt(damageToTake * _damageMultiplyer), damagePosition);
+        if (Owner == null)
+            return;
+        if ((int)levelOfPierce > (int)_armorType)
+            Owner.TakeDamage((damageToTake * _damageMultiplyer), damagePosition, ArmorType.heavy);
+        else
+            Owner.TakeDamage((damageToTake * _damageMultiplyer) / ((int)levelOfPierce / (int)_armorType), damagePosition, ArmorType.heavy);
     }
 }

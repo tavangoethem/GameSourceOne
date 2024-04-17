@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Weaponry;
 
 public class BasicRifleEnemyCharacter : CharacterBase
 {
@@ -22,5 +23,6 @@ public class BasicRifleEnemyCharacter : CharacterBase
         GetComponent<AiStates.AIStates>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        GetComponent<AiStates.AIStates>().weapon.GetComponent<IAIWeapons>().IsShoot = false;
     }
 }

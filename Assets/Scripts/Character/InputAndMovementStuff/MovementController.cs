@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -7,6 +8,10 @@ public class MovementController : MonoBehaviour
     [SerializeField, Min(1)] private float _baseMovementSpeed = 10;
     [SerializeField, Min(1)] private float _slowMovementSpeed = 5;
     [SerializeField, Min(1)] private float _jumpStrength;
+
+    [SerializeField] private LayerMask _outsideLayer;
+    [SerializeField] private LayerMask _insideLayer;
+    private LayerMask _tempMask;
 
     private CharacterController _characterController;
     private CapsuleCollider _capsuleCollider;
@@ -18,10 +23,9 @@ public class MovementController : MonoBehaviour
 
     public bool canCrouch = false;
 
-    public AudioManager audioManager;
-    public AudioClip crouchingClip;
-    public AudioClip indoorClip;
-    public AudioClip outdoorClip;
+    public AudioSource crouchingClip;
+    public AudioSource indoorClip;
+    public AudioSource outdoorClip;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -44,15 +48,17 @@ public class MovementController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))
         {
-            if (velocity.magnitude > 0.01f && audioManager != null)
+            if (((Mathf.Abs(velocity.x) > 2f) || Mathf.Abs(velocity.z) > 2f) && (indoorClip != null || outdoorClip != null))
             {
-                if (hit.rigidbody.gameObject.layer.ToString() == "Indoors")
+                _tempMask = (_tempMask | (1 << hit.transform.gameObject.layer));
+                //(mask | (1 << layer));
+                if (_insideLayer == _tempMask && !indoorClip.isPlaying)
                 {
-                    audioManager?.PlaySFX(indoorClip);
+                    indoorClip.Play();
                 }
-                else if (hit.rigidbody.gameObject.layer.ToString() == "Outdoors")
+                else if (_outsideLayer == _tempMask && !outdoorClip.isPlaying)
                 {
-                    audioManager?.PlaySFX(outdoorClip);
+                    outdoorClip.Play();
                 }
             }
         }
@@ -71,8 +77,8 @@ public class MovementController : MonoBehaviour
     {
         if (canCrouch == true && _capsuleCollider.height == 1f)
         {
-            if (audioManager != null)
-                audioManager?.PlaySFX(crouchingClip);
+            if (crouchingClip != null && !crouchingClip.isPlaying)
+                crouchingClip.Play();
             _capsuleCollider.height = .5f;
             _capsuleCollider.center = new Vector3(0, -0.5f, 0);
             _characterController.height = 0.5f;
@@ -86,7 +92,8 @@ public class MovementController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
             {
-                audioManager?.PlaySFX(crouchingClip);
+                if (crouchingClip != null && !crouchingClip.isPlaying)
+                    crouchingClip.Play();
                 _capsuleCollider.height = 1f;
                 _capsuleCollider.center = new Vector3(0, 0, 0);
                 _characterController.height = 2f;

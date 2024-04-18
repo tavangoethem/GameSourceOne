@@ -6,6 +6,8 @@ using Weaponry;
 
 public class Pistol : WeaponBase, IShoot, IReload
 {
+    [SerializeField] AudioClip clip;
+
     [SerializeField] private int _damage = 1;
 
     [SerializeField] private int _maxAmmo = 6;
@@ -27,7 +29,7 @@ public class Pistol : WeaponBase, IShoot, IReload
 
     [SerializeField, Range(1, 15)] private int SoundOfGun;
 
-    public ShootingEvent shootingEvent;
+
     public void Shoot(InputAction.CallbackContext obj)
     {
         Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGun);
@@ -58,7 +60,7 @@ public class Pistol : WeaponBase, IShoot, IReload
         //}
 
         Transform mainCam = Camera.main.transform;
-        shootingEvent.Invoke();
+        AudioManager.instance.PlaySFX(clip, transform, 1);
         _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
         _recoilHelper.position = mainCam.position;
         RaycastHit hit;
@@ -74,7 +76,7 @@ public class Pistol : WeaponBase, IShoot, IReload
                 }
             }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
         }
 
         _curAmmo--;

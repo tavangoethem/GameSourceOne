@@ -1,6 +1,4 @@
-using AiStates;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Weaponry;
 
@@ -16,9 +14,9 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
 
     public Vector3 toOther;
 
-    public bool IsShoot { get { return _isShoot; } }
+    public bool IsShoot { get { return _isShoot; } set { _isShoot = value; } }
 
-    ShootingEvent shootingEvent;
+    [SerializeField] AudioClip shootingSound;
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -40,13 +38,13 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
             toOther = target.transform.position - transform.position;
             toOther = toOther.normalized;
             RaycastHit hit;
-            shootingEvent.Invoke();
+            AudioManager.instance.PlaySFX(shootingSound, transform, 1);
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
                 print(hit.transform.name);
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
-                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.none);
                 }
             }
             yield return new WaitForSeconds(_fireRate);

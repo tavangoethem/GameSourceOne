@@ -66,6 +66,7 @@ MonoBehaviour:
   _damage: 1
   _speed: 0.1
   AttackDistance: 2
+  shootingSound: {fileID: 8300000, guid: 1b47f9eb4038faa4e98e4accd9a826b4, type: 3}
 --- !u!1 &8629563884915649654
 GameObject:
   m_ObjectHideFlags: 0

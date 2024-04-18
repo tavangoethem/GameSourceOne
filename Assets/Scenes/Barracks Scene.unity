@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 61593825}
   - component: {fileID: 61593824}
   - component: {fileID: 61593823}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bathroom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2699,7 +2699,7 @@ GameObject:
   - component: {fileID: 109783117}
   - component: {fileID: 109783116}
   - component: {fileID: 109783115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hallway2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3816,6 +3816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_Stairs_Large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4558708785850488, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4282,7 +4286,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77682
+  m_Name: pb_Mesh32638
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6396,7 +6400,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77892
+  m_Name: pb_Mesh32848
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7380,7 +7384,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78686
+  m_Name: pb_Mesh33662
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7915,7 +7919,7 @@ GameObject:
   - component: {fileID: 457147891}
   - component: {fileID: 457147890}
   - component: {fileID: 457147889}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vault Hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8596,7 +8600,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77864
+  m_Name: pb_Mesh32820
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8967,7 +8971,7 @@ GameObject:
   - component: {fileID: 513574075}
   - component: {fileID: 513574074}
   - component: {fileID: 513574073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hallway1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10427,7 +10431,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78232
+  m_Name: pb_Mesh33190
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11023,7 +11027,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77338
+  m_Name: pb_Mesh32290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12760,7 +12764,7 @@ GameObject:
   - component: {fileID: 756588849}
   - component: {fileID: 756588848}
   - component: {fileID: 756588847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cafeteria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13532,7 +13536,7 @@ GameObject:
   - component: {fileID: 760050063}
   - component: {fileID: 760050062}
   - component: {fileID: 760050061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Start Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14198,7 +14202,7 @@ GameObject:
   - component: {fileID: 777429554}
   - component: {fileID: 777429553}
   - component: {fileID: 777429552}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15220,7 +15224,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78342
+  m_Name: pb_Mesh33304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16084,7 +16088,7 @@ GameObject:
   - component: {fileID: 894067439}
   - component: {fileID: 894067438}
   - component: {fileID: 894067437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16719,6 +16723,10 @@ PrefabInstance:
       value: PTK_Stairs_Small
       objectReference: {fileID: 0}
     - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -16783,6 +16791,10 @@ PrefabInstance:
     - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_Name
       value: PTK_Stairs_Small (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4080084735793330, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_RootOrder
@@ -16849,7 +16861,7 @@ GameObject:
   - component: {fileID: 910594016}
   - component: {fileID: 910594015}
   - component: {fileID: 910594014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bathroom/Shower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18122,7 +18134,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78310
+  m_Name: pb_Mesh33272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18430,7 +18442,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh79112
+  m_Name: pb_Mesh34096
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18732,7 +18744,7 @@ GameObject:
   - component: {fileID: 996288126}
   - component: {fileID: 996288125}
   - component: {fileID: 996288124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bedroom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19696,6 +19708,10 @@ PrefabInstance:
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_Name
       value: PTK_Stairs_Large (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21618,7 +21634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78068
+  m_Name: pb_Mesh33024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22496,7 +22512,7 @@ GameObject:
   - component: {fileID: 1183124415}
   - component: {fileID: 1183124414}
   - component: {fileID: 1183124413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24408,7 +24424,7 @@ GameObject:
   - component: {fileID: 1289154424}
   - component: {fileID: 1289154423}
   - component: {fileID: 1289154422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25482,6 +25498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_Stairs_Small
       objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4080084735793330, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -26071,7 +26091,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77850
+  m_Name: pb_Mesh32806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27365,7 +27385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77394
+  m_Name: pb_Mesh32350
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28400,7 +28420,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77638
+  m_Name: pb_Mesh32594
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28813,6 +28833,10 @@ PrefabInstance:
       value: PTK_Stairs_Small (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -28923,7 +28947,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78000
+  m_Name: pb_Mesh32956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29520,7 +29544,7 @@ GameObject:
   - component: {fileID: 1515322196}
   - component: {fileID: 1515322195}
   - component: {fileID: 1515322194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Opening Barracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30966,7 +30990,7 @@ GameObject:
   - component: {fileID: 1591796127}
   - component: {fileID: 1591796126}
   - component: {fileID: 1591796125}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31992,7 +32016,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78574
+  m_Name: pb_Mesh33546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32577,6 +32601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_Stairs_Small (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4080084735793330, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -32731,6 +32759,10 @@ PrefabInstance:
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_Name
       value: PTK_Stairs_Large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4558708785850488, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_RootOrder
@@ -33207,7 +33239,7 @@ GameObject:
   - component: {fileID: 1693418447}
   - component: {fileID: 1693418446}
   - component: {fileID: 1693418445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vents1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34304,7 +34336,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77972
+  m_Name: pb_Mesh32928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34495,7 +34527,7 @@ GameObject:
   - component: {fileID: 1735577307}
   - component: {fileID: 1735577306}
   - component: {fileID: 1735577305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36329,6 +36361,10 @@ PrefabInstance:
       value: PTK_Stairs_Small (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513646825351600, guid: 7c86d38630d69c3428eaa64a2437111f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -36393,6 +36429,10 @@ PrefabInstance:
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_Name
       value: PTK_Stairs_Large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38916,7 +38956,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78518
+  m_Name: pb_Mesh33484
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39084,6 +39124,10 @@ PrefabInstance:
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_Name
       value: PTK_Stairs_Large
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39841,7 +39885,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78732
+  m_Name: pb_Mesh33708
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42201,6 +42245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_Stairs_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 1708576523022976, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4558708785850488, guid: bcb5c50335d5ead4abea041e6e413ccd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -42684,7 +42732,7 @@ GameObject:
   - component: {fileID: 2144884371}
   - component: {fileID: 2144884370}
   - component: {fileID: 2144884369}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vault
   m_TagString: Untagged
   m_Icon: {fileID: 0}

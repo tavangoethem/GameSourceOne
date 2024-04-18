@@ -11,7 +11,7 @@ public class RemoteExplosives : WeaponBase, IShoot, IAltFire
     private List<Explosive> Explosives = new List<Explosive>();
     [SerializeField] private GameObject _explosive;
 
-    public ShootingEvent shootingEvent;
+    [SerializeField] AudioClip shootingSound;
     public void Shoot(InputAction.CallbackContext obj)
     {
         GameObject temp = Instantiate(_explosive, _firePoint.position, Quaternion.identity);
@@ -25,7 +25,8 @@ public class RemoteExplosives : WeaponBase, IShoot, IAltFire
         {
             if (exp != null)
             {
-                shootingEvent.Invoke();
+                if (shootingSound != null)
+                    AudioManager.instance.PlaySFX(shootingSound, transform, 1);
                 exp.Explode();
             }
         }

@@ -4,14 +4,23 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public interface IDamagable 
 {
-    abstract void TakeDamage(int damageToTake, Vector3 damagePosition);
+    abstract void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce);
 
     abstract void Die();
+
+    public ArmorType ArmorType { get; }
 };
+
+public enum ArmorType
+{
+    none = 1,
+    light = 2,
+    heavy = 3
+}
 
 public interface IHealable
 {
-    abstract void HealDamage(int valueToHeal);
+    abstract void HealDamage(float valueToHeal);
 }
 
 public interface IInteractable
@@ -41,7 +50,7 @@ namespace Weaponry
 
     public interface IAIWeapons
     {
-        public abstract bool IsShoot { get;  }
+        public abstract bool IsShoot { get; set; }
 
         abstract void AIShoot(GameObject target);
 

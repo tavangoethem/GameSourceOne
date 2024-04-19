@@ -115,4 +115,4 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 0}
   _gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   _explosionDamage: 50
-  ExplosionSound: {fileID: 8300000, guid: 6f12ac8228f538944ab56febdb9c51df, type: 3}
+  ExplosionSound: {fileID: 8300000, guid: 1c9ed7cbd87c9cd4187083756be9f92b, type: 3}

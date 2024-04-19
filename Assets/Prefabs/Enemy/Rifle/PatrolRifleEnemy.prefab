@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 507641541119026039}
   - component: {fileID: 785550781835230173}
   - component: {fileID: 8289840814981366081}
-  - component: {fileID: 8444987441054908790}
+  - component: {fileID: 5027591369148669862}
   m_Layer: 0
   m_Name: B-head
   m_TagString: Untagged
@@ -557,7 +557,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &8444987441054908790
+--- !u!114 &5027591369148669862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 2
+  StupidArmorType: 1
 --- !u!1 &7628665392397802124
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 7628665392502385732}
   - component: {fileID: 3186114681523859640}
   - component: {fileID: 1923611977909961072}
-  - component: {fileID: 589037390565621112}
+  - component: {fileID: 4960625132768480452}
   m_Layer: 0
   m_Name: B-hips
   m_TagString: Untagged
@@ -763,7 +764,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &589037390565621112
+--- !u!114 &4960625132768480452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -777,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 3
 --- !u!1 &7628665392543581916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1012,7 @@ GameObject:
   - component: {fileID: 2932217117650315250}
   - component: {fileID: 1571868723813205816}
   - component: {fileID: 1613094027404139313}
-  - component: {fileID: 137136198747271415}
+  - component: {fileID: 5317046260686169619}
   m_Layer: 0
   m_Name: B-shin.L
   m_TagString: Untagged
@@ -1110,7 +1112,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &137136198747271415
+--- !u!114 &5317046260686169619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1124,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665392910028642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1171,7 @@ GameObject:
   - component: {fileID: 682270031061884964}
   - component: {fileID: 6086279491556668685}
   - component: {fileID: 5727719938729458875}
-  - component: {fileID: 4815704782685652070}
+  - component: {fileID: 7256978708870887087}
   m_Layer: 0
   m_Name: B-upper_arm.R
   m_TagString: Untagged
@@ -1268,7 +1271,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4815704782685652070
+--- !u!114 &7256978708870887087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,6 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665392974177441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1458,7 @@ GameObject:
   - component: {fileID: 7201327852133616240}
   - component: {fileID: 8350459437207178384}
   - component: {fileID: 8329217460177213870}
-  - component: {fileID: 8832924203272400265}
+  - component: {fileID: 3556028827406285821}
   m_Layer: 0
   m_Name: B-chest
   m_TagString: Untagged
@@ -1553,7 +1557,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &8832924203272400265
+--- !u!114 &3556028827406285821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1567,6 +1571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 3
 --- !u!1 &7628665393154687271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1849,7 @@ GameObject:
   - component: {fileID: 4237599963159965136}
   - component: {fileID: 8672296529945923670}
   - component: {fileID: 5409317255945244925}
-  - component: {fileID: 2176955855032211569}
+  - component: {fileID: 2161986927430096236}
   m_Layer: 0
   m_Name: B-thigh.R
   m_TagString: Untagged
@@ -1944,7 +1949,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &2176955855032211569
+--- !u!114 &2161986927430096236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1958,6 +1963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665393235195787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2222,7 @@ GameObject:
   - component: {fileID: 6213071566046942392}
   - component: {fileID: 1239679792870933483}
   - component: {fileID: 393360673173831792}
-  - component: {fileID: 3093601661569673032}
+  - component: {fileID: 7243182858523498358}
   m_Layer: 0
   m_Name: B-forearm.L
   m_TagString: Untagged
@@ -2316,7 +2322,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &3093601661569673032
+--- !u!114 &7243182858523498358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2330,6 +2336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665393561274402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2516,7 @@ MonoBehaviour:
   health:
     maxHealth: 15
     curHealth: 0
+  _armorType: 0
 --- !u!114 &7628665393561274397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2777,7 +2785,7 @@ GameObject:
   - component: {fileID: 114670604455360754}
   - component: {fileID: 931360186996258354}
   - component: {fileID: 8490919804254196467}
-  - component: {fileID: 5814160185488791640}
+  - component: {fileID: 8980934630158219852}
   m_Layer: 0
   m_Name: B-upper_arm.L
   m_TagString: Untagged
@@ -2877,7 +2885,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5814160185488791640
+--- !u!114 &8980934630158219852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2891,6 +2899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665393799979168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,7 +3170,7 @@ GameObject:
   - component: {fileID: 7099760997337639106}
   - component: {fileID: 7257595672346022151}
   - component: {fileID: 2026177611967953716}
-  - component: {fileID: 7846221002042858461}
+  - component: {fileID: 519820333748020257}
   m_Layer: 0
   m_Name: B-forearm.R
   m_TagString: Untagged
@@ -3261,7 +3270,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &7846221002042858461
+--- !u!114 &519820333748020257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3275,6 +3284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665393925932010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +3380,7 @@ GameObject:
   - component: {fileID: 2947962256601295102}
   - component: {fileID: 4964594383829885114}
   - component: {fileID: 4341362672021568632}
-  - component: {fileID: 4847621353658964501}
+  - component: {fileID: 3409505860192338888}
   m_Layer: 0
   m_Name: B-thigh.L
   m_TagString: Untagged
@@ -3470,7 +3480,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4847621353658964501
+--- !u!114 &3409505860192338888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3484,6 +3494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665394036009520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,7 +3602,7 @@ GameObject:
   - component: {fileID: 5156389945710006482}
   - component: {fileID: 4084488675634298143}
   - component: {fileID: 7355177289985784982}
-  - component: {fileID: 6205004898282976040}
+  - component: {fileID: 7261705385652868135}
   m_Layer: 0
   m_Name: B-shin.R
   m_TagString: Untagged
@@ -3691,7 +3702,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &6205004898282976040
+--- !u!114 &7261705385652868135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3705,6 +3716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 7628665393561274398}
   _damageMultiplyer: 1
+  StupidArmorType: 2
 --- !u!1 &7628665394160737384
 GameObject:
   m_ObjectHideFlags: 0

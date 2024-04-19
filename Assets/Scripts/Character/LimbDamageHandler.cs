@@ -44,14 +44,15 @@ public class LimbDamageHandler : MonoBehaviour
         }
     }
 
-    public void AddComponentsToLimbs()
+    public void AddComponentsToLimbs(ArmorType armorLevel)
     {
         GetAllRBs();
         foreach (var rb in _rbs)
         {
             if(rb.GetComponent<Limb>() != null)
-                Destroy(rb.GetComponent<Limb>());
+                DestroyImmediate(rb.GetComponent<Limb>());
             rb.gameObject.AddComponent<Limb>().Owner = GetComponent<CharacterBase>();
+            rb.GetComponent<Limb>().StupidArmorType = armorLevel;
         }
     }
 }
@@ -65,7 +66,7 @@ class LimbDamageHandlerEditor : Editor
         if (GUILayout.Button("Set Limbs"))
         {
             var myScript = target as LimbDamageHandler;
-            myScript.AddComponentsToLimbs();
+            myScript.AddComponentsToLimbs(ArmorType.light);
         }
             
     }

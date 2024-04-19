@@ -8,9 +8,9 @@ public class Limb : MonoBehaviour, IDamagable
 
     [SerializeField] private float _damageMultiplyer = 1f;
 
-    public ArmorType ArmorType { get { return _armorType; } }
+    public ArmorType ArmorType { get { return StupidArmorType; } set { StupidArmorType = value; } }
 
-    [SerializeField] private ArmorType _armorType = ArmorType.none;
+    public ArmorType StupidArmorType = ArmorType.none;
 
     public void Die()
     {
@@ -22,10 +22,10 @@ public class Limb : MonoBehaviour, IDamagable
     {
         if (Owner == null)
             return;
-        print($"LoP {(int)levelOfPierce} > A {(int)_armorType}");
+        print($"LoP {(int)levelOfPierce} > A {(int)StupidArmorType}");
 
         //if the limb does not have sufficiant armor
-        if ((int)levelOfPierce > (int)_armorType)
+        if ((int)levelOfPierce > (int)StupidArmorType)
         {
             //just deal the damage times the multiplier
             Owner.TakeDamage((damageToTake * _damageMultiplyer), damagePosition, ArmorType.heavy);
@@ -35,10 +35,10 @@ public class Limb : MonoBehaviour, IDamagable
         else
         {
             //deal the damage times the multiplier divided by the armor difference
-            Owner.TakeDamage((damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType, damagePosition, ArmorType.heavy);
+            Owner.TakeDamage((damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)StupidArmorType, damagePosition, ArmorType.heavy);
 
-            print($"DV {damageToTake} * DM {_damageMultiplyer} * LoP{(float)levelOfPierce} / A {(float)_armorType} = " +
-           $"{(damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)_armorType}");
+            print($"DV {damageToTake} * DM {_damageMultiplyer} * LoP{(float)levelOfPierce} / A {(float)StupidArmorType} = " +
+           $"{(damageToTake * _damageMultiplyer) * (float)levelOfPierce / (float)StupidArmorType}");
         }
        
         //print((float)levelOfPierce / (float)_armorType);

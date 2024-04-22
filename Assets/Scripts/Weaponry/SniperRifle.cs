@@ -58,8 +58,10 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
             }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
                 hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.heavy);
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
         }
-
+        else
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 50, .05f);
         _curAmmo--;
         _canShoot = false;
         StartCoroutine(CycleGun());

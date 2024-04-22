@@ -90,7 +90,10 @@ namespace AiStates
                             }
                         }
                     }
+                    LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
                 }
+                else
+                    LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 50, .05f);
                 _curAmmo--;
                 recoil = .25f;
                 Recoil();

@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 2
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &1748664745230950719
 Transform:
   m_ObjectHideFlags: 0
@@ -4756,7 +4756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 3
+  StupidArmorType: 1
 --- !u!114 &1748664745230950726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5059,7 +5059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 3
+  StupidArmorType: 1
 --- !u!4 &1748664745230952005
 Transform:
   m_ObjectHideFlags: 0
@@ -5385,7 +5385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &2714596782434483762
 Transform:
   m_ObjectHideFlags: 0
@@ -5703,7 +5703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &3558618865189505109
 Transform:
   m_ObjectHideFlags: 0
@@ -6237,7 +6237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &4920460428454240981
 Transform:
   m_ObjectHideFlags: 0
@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!1001 &5334175333388228763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6797,7 +6797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!1 &5826264606445855395
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,7 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 3
+  StupidArmorType: 1
 --- !u!4 &8068719537857477080
 Transform:
   m_ObjectHideFlags: 0
@@ -7513,7 +7513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &8482265205397934886
 Transform:
   m_ObjectHideFlags: 0
@@ -7636,7 +7636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 1748664745230950728}
   _damageMultiplyer: 1
-  _armorType: 1
+  StupidArmorType: 1
 --- !u!4 &8565142915697081730
 Transform:
   m_ObjectHideFlags: 0

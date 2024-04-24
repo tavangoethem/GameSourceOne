@@ -645,8 +645,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11146414, y: 0.32962418, z: 0.2914529}
-  m_Center: {x: -0.52717376, y: -0.000000059604645, z: -0.020213038}
+  m_Size: {x: 0.35956314, y: 0.32962263, z: 0.2914529}
+  m_Center: {x: -0.5097609, y: -8.431647e-10, z: -0.020213075}
 --- !u!54 &7186655158597600751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -677,6 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937092258950701
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +788,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.11353655, y: 0.16481131, z: -0.032711614}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -835,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937092360560072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1011,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.4714417, y: -0.000000042126164, z: -0.00636366}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1057,6 +1059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937092487933236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1139,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.25348908, y: -0.000000009313226, z: -0.000000052154064}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1184,6 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937092511532658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2045,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.2748912, y: 0.00000005248956, z: 0.014305842}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2089,6 +2093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 2
+  StupidArmorType: 1
 --- !u!1 &5449937093248624731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,7 +2335,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.25348908, y: 0.000000009313226, z: -0.000000052154064}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2378,6 +2383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937093378637458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,8 +2556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxHealth: 15
+    maxHealth: 10
     curHealth: 0
+  _armorType: 0
 --- !u!114 &5449937093378637469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2725,7 +2732,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.46786717, y: -0.000000003783498, z: 0.000000009313226}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2773,6 +2780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937093473268423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,7 +3017,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.11353668, y: -0.16481131, z: -0.03271148}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3057,6 +3065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937093649737993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3176,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.06463097, y: -0.079628, z: 0.005133994}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3215,6 +3224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937093814731246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,7 +3303,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.064630985, y: 0.07962798, z: 0.005133994}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3341,6 +3351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937093820348344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,7 +3684,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.46786717, y: 0.000000018670107, z: 0.000000011175871}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3721,6 +3732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 5449937093378637470}
   _damageMultiplyer: 1
+  StupidArmorType: 1
 --- !u!1 &5449937094098046307
 GameObject:
   m_ObjectHideFlags: 0

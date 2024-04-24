@@ -77,7 +77,10 @@ public class Pistol : WeaponBase, IShoot, IReload
             }
             if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
                 hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
         }
+        else
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 50, .05f);
 
         _curAmmo--;
         recoil = .25f;

@@ -1259,8 +1259,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2529242, y: 0.32962275, z: 0.2914529}
-  m_Center: {x: -0.45644373, y: -0.000000059604645, z: -0.020213455}
+  m_Size: {x: 0.35956314, y: 0.32962263, z: 0.2914529}
+  m_Center: {x: -0.5097609, y: -8.431647e-10, z: -0.020213075}
 --- !u!54 &3596151526640008645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxHealth: 15
+    maxHealth: 10
     curHealth: 0
   _armorType: 0
 --- !u!114 &3003312035207339237
@@ -2658,7 +2658,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3235,7 +3235,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

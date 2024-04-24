@@ -2822,7 +2822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxHealth: 15
+    maxHealth: 10
     curHealth: 0
   _armorType: 0
 --- !u!114 &2552554882839218412

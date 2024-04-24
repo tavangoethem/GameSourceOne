@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healAmount: 2
+  _pickupClip: {fileID: 8300000, guid: 73b45e1bff27f3a4aa11e0bbd40f0ea8, type: 3}
 --- !u!65 &5636473411286290203
 BoxCollider:
   m_ObjectHideFlags: 0

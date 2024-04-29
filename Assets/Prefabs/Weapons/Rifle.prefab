@@ -185,6 +185,7 @@ MonoBehaviour:
   recoil: 0
   SoundOfGunForEnemys: 0
   shootingSound: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
+  _reloadSound: {fileID: 8300000, guid: 0ee25d1a1c02a8b488e72c8dec3f0431, type: 3}
 --- !u!54 &8565142917093860767
 Rigidbody:
   m_ObjectHideFlags: 0

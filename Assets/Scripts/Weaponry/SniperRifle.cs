@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Weaponry;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
 {
@@ -16,7 +17,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
 
     [SerializeField] private float _zoomSens = 5;
 
-    private bool _canShoot = true;
+    [SerializeField] private bool _canShoot = true;
 
     public bool _isZoomed = false;
 
@@ -25,6 +26,8 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
     public int MaxAmmo { get { return _maxAmmo; } }
 
     [SerializeField, Range(1, 15)] private int SoundOfGun;
+
+    [SerializeField] private AudioClip _reloadSound;
 
     public void Shoot(InputAction.CallbackContext obj)
     {
@@ -71,7 +74,18 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
 
     public void Reload(InputAction.CallbackContext obj)
     {
-        _curAmmo = _maxAmmo;
+        if (_canShoot == true)
+            StartCoroutine(ReloadTime());
+
+    }
+
+    private IEnumerator ReloadTime()
+    {
+        _canShoot = false;
+        yield return new WaitForSeconds(2f);
+        _curAmmo = MaxAmmo;
+        AudioManager.instance.PlaySFX(_reloadSound, transform, .7f);
+        _canShoot = true;
     }
 
     public override void OnWeaponPickup()

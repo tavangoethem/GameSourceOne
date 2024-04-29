@@ -19,7 +19,7 @@ namespace AiStates
 
         [SerializeField] private float _fireRate = .1f;
 
-        private bool _isShoot = false;
+        [SerializeField] private bool _isShoot = false;
 
         public float recoil = 0;
 
@@ -35,9 +35,13 @@ namespace AiStates
         [SerializeField, Range(1, 15)] private int SoundOfGunForEnemys;
 
         [SerializeField] AudioClip shootingSound;
+        [SerializeField] private AudioClip _reloadSound;
+        [SerializeField] private bool _canReload = true;
 
         public void Shoot(InputAction.CallbackContext obj)
         {
+            if (_canReload == false)
+                return;
             if (obj.started)
             {
                 StartCoroutine(Shooting());
@@ -58,11 +62,12 @@ namespace AiStates
 
         public IEnumerator Shooting()
         {
+
             if (_recoilHelper == null)
             {
                 _recoilHelper = new GameObject("RecoilHelper").transform;
-                _recoilHelper.parent = Camera.main.transform;
                 _recoilHelper.rotation = Camera.main.transform.rotation;
+                _recoilHelper.parent = Camera.main.transform;
 
             }
             _isShoot = true;
@@ -104,8 +109,19 @@ namespace AiStates
 
         public void Reload(InputAction.CallbackContext obj)
         {
-            _curAmmo = _maxAmmo;
+            if(_canReload == true)
+                StartCoroutine(ReloadTime());
+
+        }
+
+        private IEnumerator ReloadTime()
+        {
+            _canReload = false;
             recoil = 0f;
+            yield return new WaitForSeconds(1f);
+            _curAmmo = MaxAmmo;
+            AudioManager.instance.PlaySFX(_reloadSound, transform, .7f);
+            _canReload = true;
         }
 
         public override void OnWeaponPickup()
@@ -137,7 +153,7 @@ namespace AiStates
             {
                 var maxRecoil = Quaternion.Euler(-20, 0, 0);
                 // Dampen towards the target rotation
-                _recoilHelper.rotation = Quaternion.Slerp(_recoilHelper.rotation, maxRecoil, Time.deltaTime * 10);
+                _recoilHelper.localRotation = Quaternion.Slerp(_recoilHelper.localRotation, maxRecoil, Time.deltaTime * 10);
                 transform.localEulerAngles = new Vector3(_recoilHelper.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
                 if (_running == false) StartCoroutine(ResetRecoil());
             }

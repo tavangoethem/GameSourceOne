@@ -2168,6 +2168,8 @@ MonoBehaviour:
     maxHealth: 99
     curHealth: 0
   _armorType: 0
+  TakeDamageSound: {fileID: 0}
+  DieSound: {fileID: 0}
 --- !u!114 &869953134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5417,6 +5419,8 @@ MonoBehaviour:
     maxHealth: 15
     curHealth: 0
   _armorType: 1
+  TakeDamageSound: {fileID: 0}
+  DieSound: {fileID: 0}
 --- !u!4 &1748664745230950729
 Transform:
   m_ObjectHideFlags: 0

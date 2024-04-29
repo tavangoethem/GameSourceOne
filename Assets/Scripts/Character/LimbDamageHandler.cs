@@ -56,7 +56,7 @@ public class LimbDamageHandler : MonoBehaviour
         }
     }
 }
-/*
+
 [CustomEditor(typeof(LimbDamageHandler))]
 class LimbDamageHandlerEditor : Editor
 {
@@ -72,4 +72,3 @@ class LimbDamageHandlerEditor : Editor
     }
 
 }
-*/

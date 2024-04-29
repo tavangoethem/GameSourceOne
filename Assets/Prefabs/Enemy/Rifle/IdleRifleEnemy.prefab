@@ -1531,6 +1531,8 @@ MonoBehaviour:
     maxHealth: 10
     curHealth: 0
   _armorType: 0
+  TakeDamageSound: {fileID: 8300000, guid: 24b4820ec4f69c5419d884c9611bd9c2, type: 3}
+  DieSound: {fileID: 8300000, guid: 979ceb5196a31014a9cfefeea67db216, type: 3}
 --- !u!114 &3003312035207339237
 MonoBehaviour:
   m_ObjectHideFlags: 0

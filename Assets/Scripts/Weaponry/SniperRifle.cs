@@ -28,6 +28,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
     [SerializeField, Range(1, 15)] private int SoundOfGun;
 
     [SerializeField] private AudioClip _reloadSound;
+    [SerializeField] private AudioClip _shootSound;
 
     public void Shoot(InputAction.CallbackContext obj)
     {
@@ -47,6 +48,8 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
 
         Transform mainCam = Camera.main.transform;
 
+        _curAmmo--;
+        AudioManager.instance.PlaySFX(_shootSound, transform, .7f);
         RaycastHit hit;
         Ray cameraRay = new Ray(mainCam.position, mainCam.forward);
         if (Physics.Raycast(cameraRay, out hit))
@@ -65,7 +68,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
         }
         else
             LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 50, .05f);
-        _curAmmo--;
+
         _canShoot = false;
         StartCoroutine(CycleGun());
         if (_isZoomed)

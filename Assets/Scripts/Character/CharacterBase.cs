@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 {
@@ -12,6 +9,9 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
     public ArmorType ArmorType { get { return _armorType; } }
     [SerializeField] private ArmorType _armorType;
 
+    public AudioClip TakeDamageSound;
+    public AudioClip DieSound;
+
     public virtual void Awake()
     {
         health.Init();
@@ -20,6 +20,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 
     public virtual void TakeDamage(float damageToTake, Vector3 damagePosition, ArmorType levelOfPierce)
     {
+        AudioManager.instance.PlaySFX(TakeDamageSound, this.transform, 1);
         if ((int)levelOfPierce > (int)_armorType)
             health.TakeDamage((damageToTake), damagePosition);
         else
@@ -29,7 +30,7 @@ public abstract class CharacterBase : MonoBehaviour, IDamagable, IHealable
 
     public virtual void Die()
     {
-
+        AudioManager.instance.PlaySFX(TakeDamageSound, this.transform.position, 1);
     }
 
     public void HealDamage(float valueToHeal)

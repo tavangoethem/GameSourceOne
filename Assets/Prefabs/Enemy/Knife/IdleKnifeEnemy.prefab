@@ -1604,6 +1604,8 @@ MonoBehaviour:
     maxHealth: 10
     curHealth: 0
   _armorType: 0
+  TakeDamageSound: {fileID: 0}
+  DieSound: {fileID: 0}
 --- !u!114 &3730253808541584359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,139 +3518,6 @@ Transform:
   m_Father: {fileID: 3730253808796222991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4144052033058833990
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4144052033058834011}
-  - component: {fileID: 4144052033058833993}
-  m_Layer: 0
-  m_Name: AIKnife
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4144052033058834011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144052033058833990}
-  m_LocalRotation: {x: -0.72777456, y: 0.3105616, z: 0.6050007, w: 0.0887126}
-  m_LocalPosition: {x: 0.203, y: -0.035, z: 0.065}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5714232427684525904}
-  m_Father: {fileID: 3730253808906960385}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -4.679, y: 97.93, z: 103.318}
---- !u!114 &4144052033058833993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144052033058833990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4086fd09b39560428f37a7c60f31d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _fireRate: 1
-  _isShoot: 0
-  toOther: {x: 0, y: 0, z: 0}
-  shootingSound: {fileID: 0}
---- !u!1 &4901843506585611754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5714232427684525904}
-  - component: {fileID: 8710757224955803893}
-  - component: {fileID: 6847200701458189375}
-  m_Layer: 0
-  m_Name: KnifeVisuals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5714232427684525904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4901843506585611754}
-  m_LocalRotation: {x: 0.3826837, y: -0, z: -0, w: 0.9238795}
-  m_LocalPosition: {x: 0, y: 0.082, z: 0.228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4144052033058834011}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!33 &8710757224955803893
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4901843506585611754}
-  m_Mesh: {fileID: 7039088848386547499, guid: b3e0aac5a7001ab4f892a4c1c3d2a1cc, type: 3}
---- !u!23 &6847200701458189375
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4901843506585611754}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 732953fa90bf56942a84625b42cdbf1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7703220845616952688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,3 +3646,76 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &8790407606885037592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3730253808906960385}
+    m_Modifications:
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0887126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.72777456
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3105616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6050007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -4.679
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 97.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 103.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647552616651501662, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+      propertyPath: m_Name
+      value: AIKnife
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+--- !u!114 &4144052033058833993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4647552616651501649, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+  m_PrefabInstance: {fileID: 8790407606885037592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4086fd09b39560428f37a7c60f31d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4144052033058834011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4647552616651501635, guid: 8c587b01fb349964e87f2c37d85fa719, type: 3}
+  m_PrefabInstance: {fileID: 8790407606885037592}
+  m_PrefabAsset: {fileID: 0}

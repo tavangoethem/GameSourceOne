@@ -19,6 +19,8 @@ public class AIPistol : MonoBehaviour, IAIWeapons
 
     [SerializeField] AudioClip shootingSound;
 
+    public ShootingEvent shootingEvent;
+
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -36,6 +38,7 @@ public class AIPistol : MonoBehaviour, IAIWeapons
         AudioManager.instance.PlaySFX(shootingSound, transform, 1);
         while (_isShoot == true)
         {
+            shootingEvent.Invoke();
             running = true;
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             toOther = target.transform.position - transform.position;

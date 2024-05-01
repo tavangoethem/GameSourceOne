@@ -26,6 +26,8 @@ public class MovementController : MonoBehaviour
     public AudioSource crouchingClip;
     public AudioSource indoorClip;
     public AudioSource outdoorClip;
+
+    private const string SFXPREFSNAME = "SFXVolume";
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -54,10 +56,13 @@ public class MovementController : MonoBehaviour
                 //(mask | (1 << layer));
                 if (_insideLayer == _tempMask && !indoorClip.isPlaying)
                 {
+                    indoorClip.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
                     indoorClip.Play();
                 }
                 else if (_outsideLayer == _tempMask && !outdoorClip.isPlaying)
                 {
+
+                    outdoorClip.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
                     outdoorClip.Play();
                 }
             }
@@ -78,7 +83,10 @@ public class MovementController : MonoBehaviour
         if (canCrouch == true && _capsuleCollider.height == 1f)
         {
             if (crouchingClip != null && !crouchingClip.isPlaying)
+            {
+                crouchingClip.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
                 crouchingClip.Play();
+            }
             _capsuleCollider.height = .5f;
             _capsuleCollider.center = new Vector3(0, -0.5f, 0);
             _characterController.height = 0.5f;

@@ -57,18 +57,18 @@ public class LimbDamageHandler : MonoBehaviour
     }
 }
 
-[CustomEditor(typeof(LimbDamageHandler))]
-class LimbDamageHandlerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        if (GUILayout.Button("Set Limbs"))
-        {
-            var myScript = target as LimbDamageHandler;
-            myScript.AddComponentsToLimbs(ArmorType.light);
-        }
+//[CustomEditor(typeof(LimbDamageHandler))]
+//class LimbDamageHandlerEditor : Editor
+//{
+//    public override void OnInspectorGUI()
+//    {
+//        base.OnInspectorGUI();
+//        if (GUILayout.Button("Set Limbs"))
+//        {
+//            var myScript = target as LimbDamageHandler;
+//            myScript.AddComponentsToLimbs(ArmorType.light);
+//        }
             
-    }
+//    }
 
-}
+//}

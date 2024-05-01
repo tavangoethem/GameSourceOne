@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0049654874, g: 0.006199325, b: 0.0074999435, a: 1}
+  m_IndirectSpecularColor: {r: 0.002952635, g: 0.00366177, b: 0.004799735, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -697,6 +697,46 @@ PrefabInstance:
     - target: {fileID: 5348953451317290549, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
       propertyPath: m_Name
       value: IdlePistolEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38929996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.29040062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.06859968
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25881884
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.96592593
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000033527613
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914581237861181511, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43327d81b06fac4498128a0f2dbec45, type: 3}
@@ -2379,6 +2419,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: IdleRifleEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6158383714097374485, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158383714097374485, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2853
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158383714097374485, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.599
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158383714097374485, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 6389643321314574187, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3249,6 +3305,9 @@ MonoBehaviour:
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
   shootingSound: {fileID: 0}
+  shootingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1445440705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,34 +3424,6 @@ PrefabInstance:
       propertyPath: shootingSFX
       value: 
       objectReference: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 869953128}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
 --- !u!1 &1577075956
@@ -4494,6 +4525,9 @@ MonoBehaviour:
   _isShoot: 0
   toOther: {x: 0, y: 0, z: 0}
   shootingSound: {fileID: 0}
+  shootingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &638748935006457366
 GameObject:
   m_ObjectHideFlags: 0

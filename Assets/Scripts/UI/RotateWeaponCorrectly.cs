@@ -8,6 +8,6 @@ public class RotateWeaponCorrectly : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(_point2.position + _point2.forward * .1f);
+        //transform.LookAt(_point2.position + _point2.forward * .1f);
     }
 }

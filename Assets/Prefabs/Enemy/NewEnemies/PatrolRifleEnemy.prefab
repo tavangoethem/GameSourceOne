@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: _curState
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6178371216209712608, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: _RangeAttack
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178371216209712608, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
+      propertyPath: _isPlayerInRange
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6389643321314574187, guid: 6c84f277d836e37458add1ff81cb1210, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxHealth: 10
+    maxHealth: 25
     curHealth: 0
   _armorType: 0
   TakeDamageSound: {fileID: 8300000, guid: 24b4820ec4f69c5419d884c9611bd9c2, type: 3}

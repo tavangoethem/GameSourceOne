@@ -38,6 +38,8 @@ namespace AiStates
         [SerializeField] private AudioClip _reloadSound;
         [SerializeField] private bool _canReload = true;
 
+        public ShootingEvent shootingEvent;
+
         public void Shoot(InputAction.CallbackContext obj)
         {
             if (_canReload == false)
@@ -76,7 +78,7 @@ namespace AiStates
                 if (shootingSound != null)
                     AudioManager.instance.PlaySFX(shootingSound, transform, 1);
                 Transform mainCam = Camera.main.transform;
-
+                shootingEvent.Invoke();
                 _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
                 _recoilHelper.position = mainCam.position;
                 RaycastHit hit;

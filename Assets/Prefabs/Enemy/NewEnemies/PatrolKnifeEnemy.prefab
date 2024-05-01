@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: _curState
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -4061193417567074136, guid: 1ddc8832334b9c940ab8d16560ab3245, type: 3}
+      propertyPath: _RangeAttack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4061193417567074136, guid: 1ddc8832334b9c940ab8d16560ab3245, type: 3}
+      propertyPath: _isPlayerInRange
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9074877705204217608, guid: 1ddc8832334b9c940ab8d16560ab3245, type: 3}
       propertyPath: m_Name
       value: PatrolKnifeEnemy

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +13,7 @@ namespace AiStates
 
         private bool _NextCheckPoint = true;
         public Transform[] _Checkpoints;
-        private int _CheckpointDest = 0;
+        [SerializeField] private int _CheckpointDest = 0;
 
         public override AIStateType OnStateUpdate()
         {
@@ -60,8 +62,9 @@ namespace AiStates
                     }
                     _NextCheckPoint = false;
                 }
-                else if (_myAgent.GetNavAgent.destination.x == this.transform.position.x && _myAgent.GetNavAgent.destination.z == this.transform.position.z)
+                else if (Vector3.Distance(_myAgent.transform.position, _myAgent.GetNavAgent.destination) < 1)
                 {
+                    _myAgent.GetNavAgent.destination = this.transform.position;
                     _NextCheckPoint = true;
                 }
                 else if (_myAgent.Player)

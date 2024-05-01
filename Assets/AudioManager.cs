@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //@author Nick Frost (but i just copied Cameron's code)
@@ -12,12 +11,16 @@ public class AudioManager : MonoBehaviour
     private int _curSFXIndex = 0;
     [SerializeField] private int _sfxSourceLength;
 
+    private const string BGMPREFSNAME = "BGMVolume";
+    private const string SFXPREFSNAME = "SFXVolume";
+
     private void Awake()
     {   //Singleton
-        if(AudioManager.instance == null)
+        if (AudioManager.instance == null)
             AudioManager.instance = this;
-        else if(AudioManager.instance != this)
+        else if (AudioManager.instance != this)
             Destroy(this);
+        DontDestroyOnLoad(this);
     }
 
     private void Start()
@@ -35,6 +38,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clipToPlay)
     {
         _sfxSource[_curSFXIndex].clip = clipToPlay;
+        _sfxSource[_curSFXIndex].volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
         _sfxSource[_curSFXIndex].Play();
         _curSFXIndex++;
         if (_curSFXIndex > _sfxSourceLength - 1)
@@ -49,6 +53,7 @@ public class AudioManager : MonoBehaviour
         AudioSource temp = origin.gameObject.AddComponent<AudioSource>();
         temp.clip = clipToPlay;
         temp.spatialBlend = spacialBlend;
+        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length));
     }
@@ -60,6 +65,7 @@ public class AudioManager : MonoBehaviour
         AudioSource temp = tempGO.AddComponent<AudioSource>();
 
         temp.clip = clipToPlay;
+        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
         temp.spatialBlend = spacialBlend;
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length, true));
@@ -70,7 +76,7 @@ public class AudioManager : MonoBehaviour
     private IEnumerator DestroySourceAfterDuration(AudioSource sourceToDestroy, float duration, bool destoryObject = false)
     {
         yield return new WaitForSeconds(duration);
-        if(destoryObject == false)
+        if (destoryObject == false)
             Destroy(sourceToDestroy);
         else
             Destroy(sourceToDestroy.gameObject);
@@ -90,11 +96,11 @@ public class AudioManager : MonoBehaviour
         AudioSource newSource = gameObject.AddComponent<AudioSource>();
         newSource.clip = musicToPlay;
         newSource.Play();
-        while(t < fadeDuration)
+        while (t < fadeDuration)
         {
             t += Time.deltaTime;
-            _bgm.volume = Mathf.Lerp(1,0,t/fadeDuration);
-            newSource.volume = Mathf.Lerp(0,1, t / fadeDuration);
+            _bgm.volume = Mathf.Lerp(PlayerPrefs.GetFloat(BGMPREFSNAME), 0, t / fadeDuration);
+            newSource.volume = Mathf.Lerp(0, PlayerPrefs.GetFloat(BGMPREFSNAME), t / fadeDuration);
             yield return null;
         }
         Destroy(_bgm);

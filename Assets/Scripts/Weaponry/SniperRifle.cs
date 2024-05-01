@@ -67,7 +67,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
             LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
         }
         else
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 50, .05f);
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 10, .05f);
 
         _canShoot = false;
         StartCoroutine(CycleGun());

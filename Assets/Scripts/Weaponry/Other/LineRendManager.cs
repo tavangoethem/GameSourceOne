@@ -21,7 +21,7 @@ public class LineRendManager : MonoBehaviour
         temp.endWidth= .01f;
         temp.material = _defaultLineMat;
         temp.positionCount = 2;
-        temp.startColor = Color.clear;
+        temp.startColor = new Color(0,0,0, 64);
         temp.endColor = Color.yellow;
         temp.SetPosition(0, startPos);
         temp.SetPosition(1, EndPos);

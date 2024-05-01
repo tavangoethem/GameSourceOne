@@ -32,6 +32,8 @@ public class Pistol : WeaponBase, IShoot, IReload
     [SerializeField]private bool _canReload = true;
     [SerializeField] private AudioClip _reloadSound;
 
+    public ShootingEvent _event;
+
     public void Shoot(InputAction.CallbackContext obj)
     {
         if (_canReload == false)
@@ -62,7 +64,7 @@ public class Pistol : WeaponBase, IShoot, IReload
         //    if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
         //        hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
         //}
-
+        _event.Invoke();
         Transform mainCam = Camera.main.transform;
         AudioManager.instance.PlaySFX(clip, transform, 1);
         _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
@@ -84,7 +86,7 @@ public class Pistol : WeaponBase, IShoot, IReload
             LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
         }
         else
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 50, .05f);
+            LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 10, .05f);
 
         _curAmmo--;
         recoil = .25f;

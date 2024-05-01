@@ -45,6 +45,8 @@ namespace AiStates
         public AudioSource indoorClip;
         public AudioSource outdoorClip;
 
+        private const string SFXPREFSNAME = "SFXVolume";
+
         [Tooltip("Set to the player.")][SerializeField] public GameObject Player;
 
         public void Start()
@@ -91,10 +93,12 @@ namespace AiStates
                     }
                     if (_insideLayer == _tempMask && !indoorClip.isPlaying)
                     {
+                        indoorClip.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
                         indoorClip.Play();
                     }
                     else if (_outsideLayer == _tempMask && !outdoorClip.isPlaying)
                     {
+                        indoorClip.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
                         outdoorClip.Play();
                     }
                 }

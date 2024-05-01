@@ -18,6 +18,8 @@ public class AIRifle : MonoBehaviour, IAIWeapons
 
     [SerializeField] AudioClip shootingSound;
 
+    public ShootingEvent shootingEvent;
+
     public void AIShoot(GameObject target)
     {
         if (_isShoot == true && running == false)
@@ -34,6 +36,7 @@ public class AIRifle : MonoBehaviour, IAIWeapons
     {
         while (_isShoot == true)
         {
+            shootingEvent.Invoke();
             running = true;
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             toOther = target.transform.position - transform.position;

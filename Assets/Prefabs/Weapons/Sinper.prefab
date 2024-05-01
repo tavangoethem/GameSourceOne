@@ -198,8 +198,11 @@ MonoBehaviour:
   _curAmmo: 4
   _cycleSpeed: 1.5
   _zoomSens: 2
+  _canShoot: 1
   _isZoomed: 0
   SoundOfGun: 1
+  _reloadSound: {fileID: 8300000, guid: 0ee25d1a1c02a8b488e72c8dec3f0431, type: 3}
+  _shootSound: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
 --- !u!1 &7251386856268342175
 GameObject:
   m_ObjectHideFlags: 0

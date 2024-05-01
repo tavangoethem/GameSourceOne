@@ -11,10 +11,13 @@ public class CameraLook : MonoBehaviour
     private Camera _camera;
     [SerializeField] private Transform _body;
 
+    private const string SENSPREFSNAME = "Sens";
+
     private void Awake()
     {
         _camera = Camera.main;
         //_body = transform.parent;
+        _sensitivty = PlayerPrefs.GetFloat(SENSPREFSNAME, 500f) / 100f;
     }
 
     public void UpdateRotation(Vector2 viewDelta)

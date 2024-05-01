@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clipToPlay)
     {
         _sfxSource[_curSFXIndex].clip = clipToPlay;
-        _sfxSource[_curSFXIndex].volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
+        _sfxSource[_curSFXIndex].volume = PlayerPrefs.GetFloat(SFXPREFSNAME, .5f);
         _sfxSource[_curSFXIndex].Play();
         _curSFXIndex++;
         if (_curSFXIndex > _sfxSourceLength - 1)
@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         AudioSource temp = origin.gameObject.AddComponent<AudioSource>();
         temp.clip = clipToPlay;
         temp.spatialBlend = spacialBlend;
-        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
+        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME, .5f);
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length));
     }
@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
         AudioSource temp = tempGO.AddComponent<AudioSource>();
 
         temp.clip = clipToPlay;
-        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
+        temp.volume = PlayerPrefs.GetFloat(SFXPREFSNAME, .5f);
         temp.spatialBlend = spacialBlend;
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length, true));
@@ -99,11 +99,13 @@ public class AudioManager : MonoBehaviour
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
-            _bgm.volume = Mathf.Lerp(PlayerPrefs.GetFloat(BGMPREFSNAME), 0, t / fadeDuration);
-            newSource.volume = Mathf.Lerp(0, PlayerPrefs.GetFloat(BGMPREFSNAME), t / fadeDuration);
+            if(_bgm != null)
+                _bgm.volume = Mathf.Lerp(PlayerPrefs.GetFloat(BGMPREFSNAME, .5f), 0, t / fadeDuration);
+            newSource.volume = Mathf.Lerp(0, PlayerPrefs.GetFloat(BGMPREFSNAME, .5f), t / fadeDuration);
             yield return null;
         }
-        Destroy(_bgm);
+        if(_bgm != null)
+            Destroy(_bgm);
         _bgm = newSource;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0049654874, g: 0.006199325, b: 0.0074999435, a: 1}
+  m_IndirectSpecularColor: {r: 0.002952635, g: 0.00366177, b: 0.004799735, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3365,34 +3365,6 @@ PrefabInstance:
       propertyPath: shootingSFX
       value: 
       objectReference: {fileID: 8300000, guid: 46866f64949f12043a953c27fd109e81, type: 3}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 869953128}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565142917093860766, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
-      propertyPath: shootingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 089870938bb9fa2478ffe5fa95a3fe40, type: 3}
 --- !u!1 &1577075956

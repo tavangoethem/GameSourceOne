@@ -30,6 +30,8 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
     [SerializeField] private AudioClip _reloadSound;
     [SerializeField] private AudioClip _shootSound;
 
+    public ShootingEvent Event;
+
     public void Shoot(InputAction.CallbackContext obj)
     {
         if (_canShoot == false)
@@ -47,7 +49,7 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
         if (_curAmmo <= 0) return;
 
         Transform mainCam = Camera.main.transform;
-
+        Event.Invoke();
         _curAmmo--;
         AudioManager.instance.PlaySFX(_shootSound, transform, .7f);
         RaycastHit hit;

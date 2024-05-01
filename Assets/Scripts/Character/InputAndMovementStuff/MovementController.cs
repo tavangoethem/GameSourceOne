@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -72,7 +71,7 @@ public class MovementController : MonoBehaviour
     public void jumpNow()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f) && Physics.Raycast(transform.position, transform.up, out hit, 1.5f) == false)
         {
             _verticalVelocity = _jumpStrength;
         }
@@ -119,8 +118,6 @@ public class MovementController : MonoBehaviour
         RaycastHit hit;
         while (Physics.Raycast(transform.position, transform.up, out hit, 1.5f))
         {
-            print(hit.transform.name);
-
             yield return null;
         }
         AttemptExitCrouch();

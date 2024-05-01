@@ -20,6 +20,14 @@ public class CameraLook : MonoBehaviour
         _sensitivty = PlayerPrefs.GetFloat(SENSPREFSNAME, 500f) / 100f;
     }
 
+    public void Update()
+    {
+        if (_sensitivty != PlayerPrefs.GetFloat(SENSPREFSNAME, 500f) / 100f)
+        {
+            _sensitivty = PlayerPrefs.GetFloat(SENSPREFSNAME, 500f) / 100f;
+        }
+    }
+
     public void UpdateRotation(Vector2 viewDelta)
     {
         _body.Rotate(0f, viewDelta.x * _sensitivty / 20f, 0f);

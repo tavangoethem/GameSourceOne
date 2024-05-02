@@ -1,13 +1,23 @@
+using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+[Serializable]
+public class PauseEvent : UnityEvent { }
 [RequireComponent(typeof(MovementController))]
 public class InputController : MonoBehaviour
 {
     [SerializeField] private MainInput mainInput;
     [SerializeField] private MovementController movementController;
     [SerializeField] private CameraLook cameraLook;
+
+    bool IsPaused;
+
+    public PauseEvent startPause;
+    public PauseEvent stopPause;
+
     private void Awake()
     {
         mainInput = new MainInput();
@@ -20,6 +30,7 @@ public class InputController : MonoBehaviour
         mainInput.Player.Crouch.started += StartCrouch;
         mainInput.Player.Crouch.canceled += EndCrouch;
         mainInput.Player.Jump.performed += JumpAction;
+        mainInput.Player.Pause.performed += PauseAction;
     }
     private void Update()
     {
@@ -51,6 +62,20 @@ public class InputController : MonoBehaviour
         cameraLook?.UpdateRotation(delta);
     }
 
+    private void PauseAction(InputAction.CallbackContext context)
+    {
+        if (IsPaused == false)
+        {
+            IsPaused = true;
+            startPause.Invoke();
+        }
+        else if (IsPaused == true)
+        {
+            IsPaused = false;
+            stopPause.Invoke();
+        }
+    }
+
     private void OnDisable()
     {
         mainInput.Disable();
@@ -59,5 +84,10 @@ public class InputController : MonoBehaviour
         mainInput.Player.Crouch.started -= StartCrouch;
         mainInput.Player.Crouch.canceled -= EndCrouch;
         mainInput.Player.Jump.performed -= JumpAction;
+    }
+    
+    public void UnPause()
+    {
+        IsPaused = false;
     }
 }

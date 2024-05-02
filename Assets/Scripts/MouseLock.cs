@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLock : MonoBehaviour
 {
-    [SerializeField] private bool LockOff;
+    public bool LockOff;
     void Start()
     {
         if (LockOff == false)
@@ -20,7 +20,21 @@ public class MouseLock : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+    }
+
+    public void MouseLockFlip()
+    {
+        if (LockOff == true)
+        {
+            LockOff = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (LockOff == false)
+        {
+            LockOff = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }

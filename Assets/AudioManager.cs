@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -45,7 +46,22 @@ public class AudioManager : MonoBehaviour
             _curSFXIndex = 0;
     }
 
-    //Play an audio clip. Only use this overrided method if you need to originate a sound from an object in game.
+    public void Update()
+    {
+        if (_sfxSource[_curSFXIndex].volume != PlayerPrefs.GetFloat(SFXPREFSNAME))
+        {
+            for (int i = 0; i < _sfxSource.Length; i++)
+            {
+                _sfxSource[i].volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
+            }
+        }
+        if (_bgm.volume != PlayerPrefs.GetFloat(BGMPREFSNAME))
+        {
+            _bgm.volume = PlayerPrefs.GetFloat(BGMPREFSNAME);
+        }
+    }
+
+    //Play an audio clip. Only use this override method if you need to originate a sound from an object in game.
     //@param origin refers to the position of the object creating the sound.
     //@param spacialBlend determines the sound's spacial calculations.  0.0 makes the sound full 2D, 1.0 makes it full 3D.
     public void PlaySFX(AudioClip clipToPlay, Transform origin, float spacialBlend)
@@ -70,7 +86,16 @@ public class AudioManager : MonoBehaviour
         temp.Play();
         StartCoroutine(DestroySourceAfterDuration(temp, clipToPlay.length, true));
     }
-
+    public void PlaySFX(AudioClip clipToPlay, Vector3 origin, float spacialBlend, bool isLoop, int MinDistanceHeard)
+    {
+        _sfxSource[_curSFXIndex].clip = clipToPlay;
+        _sfxSource[_curSFXIndex].volume = PlayerPrefs.GetFloat(SFXPREFSNAME, .5f);
+        _sfxSource[_curSFXIndex].Play();
+        _sfxSource[_curSFXIndex].minDistance = MinDistanceHeard;
+        _sfxSource[_curSFXIndex].loop = isLoop;
+        _sfxSource[_curSFXIndex].spatialBlend = spacialBlend;
+        _curSFXIndex++;
+    }
 
     //Destroy the audio source component once the sound is finished.  Only called when the audio is spacial. 
     private IEnumerator DestroySourceAfterDuration(AudioSource sourceToDestroy, float duration, bool destoryObject = false)
@@ -82,7 +107,7 @@ public class AudioManager : MonoBehaviour
             Destroy(sourceToDestroy.gameObject);
     }
 
-    // Calls the Background music Coroutine. We use a seperate method because coroutines can only be called in 
+    // Calls the Background music Coroutine. We use a separate method because coroutines can only be called in 
     // The script where they are declared. 
     public void PlayBGM(AudioClip musicToPlay, float fadeDuration)
     {

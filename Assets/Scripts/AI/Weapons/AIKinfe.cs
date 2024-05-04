@@ -41,7 +41,7 @@ public class AIKinfe : MonoBehaviour, IAIWeapons
             AudioManager.instance.PlaySFX(shootingSound, transform, 1);
             if (Physics.Raycast(this.transform.position, toOther, out hit))
             {
-                print(hit.transform.name);
+                //print(hit.transform.name);
                 if (hit.transform.gameObject.GetComponent<PlayerCharacter>() == true)
                 {
                     hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.none);

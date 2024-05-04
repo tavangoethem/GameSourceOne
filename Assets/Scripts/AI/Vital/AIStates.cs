@@ -82,7 +82,7 @@ namespace AiStates
                     Debug.LogError("Add Prefab PlayerShadow to the scene otherwise the AI wont Function");
                 }
             }
-            if ((Mathf.Abs(_navAgent.velocity.x) > 2f) || Mathf.Abs(_navAgent.velocity.z) > 2f)
+            if ((Mathf.Abs(_navAgent.velocity.x) > .0025f) || (Mathf.Abs(_navAgent.velocity.x) < -.0025f) || Mathf.Abs(_navAgent.velocity.z) > .0025f || Mathf.Abs(_navAgent.velocity.z) < -.0025f)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, -transform.up, out hit, 1.5f))

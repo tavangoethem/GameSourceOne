@@ -6,9 +6,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-
     private AudioSource _bgm;
     private AudioSource[] _sfxSource;
+    [SerializeField] private AudioSource WaterSound;
     private int _curSFXIndex = 0;
     [SerializeField] private int _sfxSourceLength;
 
@@ -50,6 +50,10 @@ public class AudioManager : MonoBehaviour
     {
         if (_sfxSource[_curSFXIndex].volume != PlayerPrefs.GetFloat(SFXPREFSNAME))
         {
+            if (WaterSound != null)
+            {
+                WaterSound.volume = PlayerPrefs.GetFloat(SFXPREFSNAME);
+            }
             for (int i = 0; i < _sfxSource.Length; i++)
             {
                 _sfxSource[i].volume = PlayerPrefs.GetFloat(SFXPREFSNAME);

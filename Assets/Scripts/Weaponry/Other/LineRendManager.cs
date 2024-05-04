@@ -16,7 +16,7 @@ public class LineRendManager : MonoBehaviour
     public void CreateRenederer(Vector3 startPos, Vector3 EndPos, float duration)
     {
         LineRenderer temp = gameObject.AddComponent<LineRenderer>();
-        print(temp.transform.name);
+        //print(temp.transform.name);
         temp.startWidth = .01f;
         temp.endWidth= .01f;
         temp.material = _defaultLineMat;

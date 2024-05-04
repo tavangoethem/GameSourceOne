@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private MovementController movementController;
     [SerializeField] private CameraLook cameraLook;
 
-    bool IsPaused;
+    public bool IsPaused;
 
     public PauseEvent startPause;
     public PauseEvent stopPause;
@@ -25,41 +25,59 @@ public class InputController : MonoBehaviour
 
     private void OnEnable()
     {
-        mainInput.Enable();
-        mainInput.Player.Enable();
-        mainInput.Player.Crouch.started += StartCrouch;
-        mainInput.Player.Crouch.canceled += EndCrouch;
-        mainInput.Player.Jump.performed += JumpAction;
-        mainInput.Player.Pause.performed += PauseAction;
+            mainInput.Enable();
+            mainInput.Player.Enable();
+            mainInput.Player.Crouch.started += StartCrouch;
+            mainInput.Player.Crouch.canceled += EndCrouch;
+            mainInput.Player.Jump.performed += JumpAction;
+            mainInput.Player.Pause.performed += PauseAction;
     }
     private void Update()
     {
-        UpdateRotation(mainInput.Player.Look.ReadValue<Vector2>());
-        UpdateMovement(mainInput.Player.Movement.ReadValue<Vector2>());
+        if (IsPaused == false)
+        {
+            UpdateRotation(mainInput.Player.Look.ReadValue<Vector2>());
+            UpdateMovement(mainInput.Player.Movement.ReadValue<Vector2>());
+        }
     }
 
     private void UpdateMovement(Vector2 delta)
     {
-        movementController?.UpdateMovement(delta);
+        if (IsPaused == false)
+        {
+            movementController?.UpdateMovement(delta);
+        }
     }
 
     private void StartCrouch(InputAction.CallbackContext context)
     {
-        movementController?.StartCrouchControl();
+        if (IsPaused == false)
+        {
+            movementController?.StartCrouchControl();
+        }
     }    
     private void EndCrouch(InputAction.CallbackContext context)
     {
-        movementController?.AttemptExitCrouch();
+        if (IsPaused == false)
+        {
+            movementController?.AttemptExitCrouch();
+        }
     }
 
     private void JumpAction(InputAction.CallbackContext context)
     {
-        movementController?.jumpNow();
+        if (IsPaused == false)
+        {
+            movementController?.jumpNow();
+        }
     }
 
     private void UpdateRotation(Vector2 delta)
     {
-        cameraLook?.UpdateRotation(delta);
+        if (IsPaused == false)
+        {
+            cameraLook?.UpdateRotation(delta);
+        }
     }
 
     private void PauseAction(InputAction.CallbackContext context)
@@ -68,11 +86,13 @@ public class InputController : MonoBehaviour
         {
             IsPaused = true;
             startPause.Invoke();
+            Time.timeScale = 0;
         }
         else if (IsPaused == true)
         {
             IsPaused = false;
             stopPause.Invoke();
+            Time.timeScale = 1;
         }
     }
 
@@ -89,5 +109,6 @@ public class InputController : MonoBehaviour
     public void UnPause()
     {
         IsPaused = false;
+        Time.timeScale = 1;
     }
 }

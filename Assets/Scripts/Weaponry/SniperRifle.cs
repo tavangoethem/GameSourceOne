@@ -31,55 +31,59 @@ public class SniperRifle : WeaponBase, IShoot, IReload, IAltFire
     [SerializeField] private AudioClip _shootSound;
 
     public ShootingEvent Event;
-
+    public InputController Ic;
     public void Shoot(InputAction.CallbackContext obj)
     {
-        if (_canShoot == false)
-            return;
-
-        Collider[] colls = Physics.OverlapSphere(transform.position, SoundOfGun);
-        foreach (Collider coll in colls)
+        Ic = GameObject.Find("Player").GetComponent<InputController>();
+        if (Ic.IsPaused == false)
         {
-            if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
-            {
-                coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
-            }
-        }
+            if (_canShoot == false)
+                return;
 
-        if (_curAmmo <= 0) return;
-
-        Transform mainCam = Camera.main.transform;
-        Event.Invoke();
-        _curAmmo--;
-        AudioManager.instance.PlaySFX(_shootSound, transform, .7f);
-        RaycastHit hit;
-        Ray cameraRay = new Ray(mainCam.position, mainCam.forward);
-        if (Physics.Raycast(cameraRay, out hit))
-        {
-            Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
-            foreach (Collider coll in colls1)
+            Collider[] colls = Physics.OverlapSphere(transform.position, SoundOfGun);
+            foreach (Collider coll in colls)
             {
                 if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
                 {
                     coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
                 }
             }
-            if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.heavy);
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
-        }
-        else
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 10, .05f);
 
-        _canShoot = false;
-        StartCoroutine(CycleGun());
-        if (_isZoomed)
-            StupidAltFire();
+            if (_curAmmo <= 0) return;
+
+            Transform mainCam = Camera.main.transform;
+            Event.Invoke();
+            _curAmmo--;
+            AudioManager.instance.PlaySFX(_shootSound, transform, .7f);
+            RaycastHit hit;
+            Ray cameraRay = new Ray(mainCam.position, mainCam.forward);
+            if (Physics.Raycast(cameraRay, out hit))
+            {
+                Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
+                foreach (Collider coll in colls1)
+                {
+                    if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+                    {
+                        coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+                    }
+                }
+                if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.heavy);
+                LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
+            }
+            else
+                LineRendManager.Instance.CreateRenederer(_firePoint.position, mainCam.forward * 10, .05f);
+
+            _canShoot = false;
+            StartCoroutine(CycleGun());
+            if (_isZoomed)
+                StupidAltFire();
+        }
     }
 
     public void Reload(InputAction.CallbackContext obj)
     {
-        if (_canShoot == true)
+        if (_canShoot == true && Ic.IsPaused == false)
             StartCoroutine(ReloadTime());
 
     }

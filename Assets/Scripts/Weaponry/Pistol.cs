@@ -33,69 +33,73 @@ public class Pistol : WeaponBase, IShoot, IReload
     [SerializeField] private AudioClip _reloadSound;
 
     public ShootingEvent _event;
-
+    public InputController Ic;
     public void Shoot(InputAction.CallbackContext obj)
     {
-        if (_canReload == false)
-            return;
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGun);
-        foreach (Collider coll in colls)
+        Ic = GameObject.Find("Player").GetComponent<InputController>();
+        if (Ic.IsPaused == false)
         {
-            if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
-            {
-                coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
-            }
-        }
-        if (_recoilHelper == null)
-        {
-            _recoilHelper = new GameObject("RecoilHelper").transform;
-            _recoilHelper.parent = Camera.main.transform;
-            _recoilHelper.rotation = Camera.main.transform.rotation;
-
-        }
-
-        if (_curAmmo <= 0) return;
-        //Transform mainCam = Camera.main.transform;
-
-        //RaycastHit hit;
-        //Ray cameraRay = new Ray(mainCam.position, mainCam.transform.forward);
-        //if (Physics.Raycast(cameraRay, out hit))
-        //{
-        //    if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-        //        hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
-        //}
-        _event.Invoke();
-        Transform mainCam = Camera.main.transform;
-        AudioManager.instance.PlaySFX(clip, transform, 1);
-        _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
-        _recoilHelper.position = mainCam.position;
-        RaycastHit hit;
-        Ray cameraRay = new Ray(mainCam.position, _recoilHelper.forward);
-        if (Physics.Raycast(cameraRay, out hit))
-        {
-            Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
-            foreach (Collider coll in colls1)
+            if (_canReload == false)
+                return;
+            Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGun);
+            foreach (Collider coll in colls)
             {
                 if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
                 {
                     coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
                 }
             }
-            if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
-                hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
-        }
-        else
-            LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 10, .05f);
+            if (_recoilHelper == null)
+            {
+                _recoilHelper = new GameObject("RecoilHelper").transform;
+                _recoilHelper.parent = Camera.main.transform;
+                _recoilHelper.rotation = Camera.main.transform.rotation;
 
-        _curAmmo--;
-        recoil = .25f;
-        Recoil();
+            }
+
+            if (_curAmmo <= 0) return;
+            //Transform mainCam = Camera.main.transform;
+
+            //RaycastHit hit;
+            //Ray cameraRay = new Ray(mainCam.position, mainCam.transform.forward);
+            //if (Physics.Raycast(cameraRay, out hit))
+            //{
+            //    if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
+            //        hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point);
+            //}
+            _event.Invoke();
+            Transform mainCam = Camera.main.transform;
+            AudioManager.instance.PlaySFX(clip, transform, 1);
+            _recoilHelper.eulerAngles = new Vector3(_recoilHelper.eulerAngles.x, mainCam.eulerAngles.y, mainCam.eulerAngles.z);
+            _recoilHelper.position = mainCam.position;
+            RaycastHit hit;
+            Ray cameraRay = new Ray(mainCam.position, _recoilHelper.forward);
+            if (Physics.Raycast(cameraRay, out hit))
+            {
+                Collider[] colls1 = Physics.OverlapSphere(hit.transform.position, 5);
+                foreach (Collider coll in colls1)
+                {
+                    if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+                    {
+                        coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+                    }
+                }
+                if (hit.transform.gameObject != null && hit.transform.gameObject.GetComponent<PlayerCharacter>() != true)
+                    hit.transform.gameObject.GetComponent<IDamagable>()?.TakeDamage(_damage, hit.point, ArmorType.light);
+                LineRendManager.Instance.CreateRenederer(_firePoint.position, hit.point, .05f);
+            }
+            else
+                LineRendManager.Instance.CreateRenederer(_firePoint.position, _recoilHelper.forward * 10, .05f);
+
+            _curAmmo--;
+            recoil = .25f;
+            Recoil();
+        }
     }
 
     public void Reload(InputAction.CallbackContext obj)
     {
-        if (_canReload == true)
+        if (_canReload == true && Ic.IsPaused == false)
             StartCoroutine(ReloadTime());
 
     }

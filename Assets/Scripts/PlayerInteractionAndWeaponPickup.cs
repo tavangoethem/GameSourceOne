@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerInteractionAndWeaponPickup : MonoBehaviour
 {
-    [Header("Interactable Stuff")]
+    [Header("Intractable Stuff")]
     [SerializeField] private Transform _weaponHoldPoint;
     [SerializeField] private GameObject _curWeapon;
     public GameObject CurWeapon { get { return _curWeapon; } }

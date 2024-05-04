@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public interface IDamagable 
@@ -33,6 +31,7 @@ namespace Weaponry
 {
     public interface IShoot 
     {
+        
         abstract void Shoot(InputAction.CallbackContext obj);
     };
 

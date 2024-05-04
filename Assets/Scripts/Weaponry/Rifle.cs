@@ -39,26 +39,30 @@ namespace AiStates
         [SerializeField] private bool _canReload = true;
 
         public ShootingEvent shootingEvent;
-
+        public InputController Ic;
         public void Shoot(InputAction.CallbackContext obj)
         {
-            if (_canReload == false)
-                return;
-            if (obj.started)
+            Ic = GameObject.Find("Player").GetComponent<InputController>();
+            if (Ic.IsPaused == false)
             {
-                StartCoroutine(Shooting());
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGunForEnemys);
-                foreach (Collider coll in colls)
+                if (_canReload == false)
+                    return;
+                if (obj.started)
                 {
-                    if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+                    StartCoroutine(Shooting());
+                    Collider[] colls = Physics.OverlapSphere(this.transform.position, SoundOfGunForEnemys);
+                    foreach (Collider coll in colls)
                     {
-                        coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+                        if (coll.gameObject.GetComponent<AIStates>() && coll.gameObject.GetComponent<AIStates>().CanSeePlayer == false)
+                        {
+                            coll.gameObject.GetComponent<AIStates>().CanSeePlayer = true;
+                        }
                     }
                 }
-            }
-            else if (obj.canceled)
-            {
-                _isShoot = false;
+                else if (obj.canceled)
+                {
+                    _isShoot = false;
+                }
             }
         }
 
@@ -73,7 +77,7 @@ namespace AiStates
 
             }
             _isShoot = true;
-            while (_isShoot && _curAmmo > 0 && _recoilHelper != null)
+            while (_isShoot && _curAmmo > 0 && _recoilHelper != null && Ic.IsPaused == false)
             {
                 if (shootingSound != null)
                     AudioManager.instance.PlaySFX(shootingSound, transform, 1);
@@ -111,7 +115,7 @@ namespace AiStates
 
         public void Reload(InputAction.CallbackContext obj)
         {
-            if(_canReload == true)
+            if(_canReload == true && Ic.IsPaused == false)
                 StartCoroutine(ReloadTime());
 
         }

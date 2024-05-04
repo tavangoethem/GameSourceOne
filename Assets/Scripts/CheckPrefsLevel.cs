@@ -16,7 +16,7 @@ public class CheckPrefsLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetInt(PROGRESSPREFNAME, 0) < _levelIndex)
+        if (PlayerPrefs.GetInt(PROGRESSPREFNAME, 0) < _levelIndex)
         {
             GetComponent<Button>().enabled = false;
             _x.SetActive(true);
